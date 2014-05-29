@@ -1,8 +1,6 @@
 <?php
 
-
 get_template_parts( array( 'theme-options') );
-
 
 function register_my_menus(){
 	register_nav_menus(
@@ -74,13 +72,37 @@ function custom_taxonomy()  {
 }
 add_action( 'init', 'custom_taxonomy', 0 );
 
+function theme_scripts() {
+	wp_deregister_script( 'jquery' );
+    
+    wp_register_script( 'jquery', get_template_directory_uri() . '/_/js/jquery.js');
+    wp_register_script( 'less', get_template_directory_uri() . '/_/js/less.js');
+    wp_register_script( 'bootstrap', get_template_directory_uri() . '/_/js/bootstrap.min.js');
+    wp_register_script( 'flexslider', get_template_directory_uri() . '/_/js/flexslider.js');           
+    wp_register_script( 'functions', get_template_directory_uri() . '/_/js/functions.js');
 
-function theme_styles()  
-{ 
+    wp_enqueue_script( 'jquery' );
+    wp_enqueue_script( 'less' );    
+    wp_enqueue_script( 'bootstrap' );
+    wp_enqueue_script( 'flexslider' );    
+	wp_enqueue_script( 'functions' );
+	
+}
+add_action('wp_enqueue_scripts', 'theme_scripts');
+
+
+function theme_styles()  { 
+  wp_register_style( 'bootstrap', get_template_directory_uri() . '/_/css/bootstrap/bootstrap.less');  
+  wp_register_style( 'myfonts', get_template_directory_uri() . '/_/css/fonts/MyFontsWebfontsKit.css');  
+  wp_register_style( 'pictograms', get_template_directory_uri() . '/_/css/fonts/pictograms.css');  
   wp_register_style( 'style-less', get_template_directory_uri() . '/_/css/style.less');  
   //wp_register_style( 'style-css', get_template_directory_uri() . '/_/css/style.css');  
-  
-  wp_enqueue_style( 'style-less' );
+
+  wp_enqueue_style( 'bootstrap' );
+  wp_enqueue_style( 'myfonts' );
+  wp_enqueue_style( 'pictograms' );
+  wp_enqueue_style( 'style-less' );  
+  //wp_enqueue_style( 'style-css' );
 }
 add_action('wp_enqueue_scripts', 'theme_styles');
 
@@ -151,7 +173,7 @@ function get_template_parts( $parts = array() ) {
 
 function remove_menus () {
 global $menu;
-	$restricted = array( __('Comments'),__('Plugins'),__('Appearance'),__('Pages'),__('Custom Fields')/* ,__('Tools'),__('Settings')  */ );
+	$restricted = array( __('Comments'),__('Plugins'),__('Appearance'),__('Pages')/* ,__('Tools'),__('Settings')  */ );
 	end ($menu);
 	while (prev($menu)){
 		$value = explode(' ',$menu[key($menu)][0]);
@@ -179,17 +201,6 @@ function remove_acf_menu(){
 add_action( 'admin_menu', 'remove_acf_menu', 999 );
 
 
-add_filter('gettext', 'rename_admin_menu_items');
-add_filter('ngettext', 'rename_admin_menu_items');
-
-function rename_admin_menu_items( $menu ) {
-	
-	$menu = str_ireplace( 'Posts', 'Blog', $menu );
-	
-	return $menu;
-}
-
-
 show_admin_bar(false);
 
 
@@ -199,9 +210,6 @@ function be_hidden_meta_boxes($hidden, $screen) {
 		$hidden = array('slugdiv', 'trackbacksdiv', 'commentstatusdiv', 'commentsdiv', 'postcustom', 'revisionsdiv');
 	return $hidden;
 }
-
-
-
 
 define('MAGPIE_FETCH_TIME_OUT', 180);
 

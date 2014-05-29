@@ -43,12 +43,6 @@ jQuery(document).ready(function($) {
 	  	console.log('#nav-toggle clicked');
 		navToggle();
 	});
-
-	
-	$('.nav-toggle-projects').click(function(event) {
-	  	event.preventDefault();
-	  	navToggle();
-	});	
 	
 	
 	$(document).keypress(function(e) {
@@ -72,26 +66,6 @@ jQuery(document).ready(function($) {
 		goToByScrollAbout(thelink);	
 
 	});	
-	
-	$("#awards-expand").click(function(e){
-		e.preventDefault();
-		if($('.awards-list').hasClass('toggled')){ 
-			$('.awards-list').removeClass('toggled');
-			$('#awards-expand').text('show all awards +');
-		
-		}
-		else if(!$('.awards-list').hasClass('toggled')){
-			$('.awards-list').addClass('toggled');	
-			$('#awards-expand').text('hide awards -');
-
-		}
-
-	});	
-	
-	$("#blanket").click(function(e){
-		e.preventDefault();
-		navToggle();
-	});		
 
 
 });//end document.ready
@@ -134,22 +108,18 @@ function goToByScroll(locale){
 
 function goToByScrollAbout(locale){
 	$('html,body').animate({
-		scrollTop: $(locale).offset().top - 120
+		scrollTop: $(locale).offset().top - 0
 	},2000);
 }
 
 
 
 function navToggle() {
-	console.log("navToggle()");
 	if(!headerState){
 		$('#header').removeClass('closed');
 		$('#header').addClass('open');
 		$('body').removeClass('header-closed');
 		$('body').addClass('header-open');	
-		$('#toggle-help').html('type m to close menu');
-		$('#blanket').addClass('on');
-
 		headerState = true
 		
 	}
@@ -158,9 +128,6 @@ function navToggle() {
 		$('#header').addClass('closed');
 		$('body').removeClass('header-open');
 		$('body').addClass('header-closed');
-		$('#toggle-help').html('type m for menu');
-		$('#blanket').removeClass('on');
-		$('#header').scrollTop(0);
 		headerState = false;
 									
 	}
@@ -202,8 +169,6 @@ function view(){
 		$("#header").css('height',contentHeight);
 		$("#content").css('width',contentWidth);		
 	}
-	
-
 	
 	        
 	if($(window).scrollTop() >= scrollOffset && $("body").hasClass('before')){

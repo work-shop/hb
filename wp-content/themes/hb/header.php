@@ -29,7 +29,7 @@
 				   
 	<meta name="description" content="<?php bloginfo('description'); ?>">
 	<meta name="google-site-verification" content="">
-	<meta name="author" content="Greg Nemes">
+	<meta name="author" content="Work-Sop">
 		
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	
@@ -42,9 +42,7 @@
     <![endif]-->		
     	
 	<?php wp_head(); ?>
-	
-	<script src="<?php bloginfo('template_directory'); ?>/_/js/less.js"></script>
-		
+			
 </head>
 
 <body <?php body_class('before header-closed'); ?>>
@@ -75,7 +73,6 @@
 			</h4>
 		</div>
 			
-				
 	</header>
 		
 	<div id="content" class="clearfix">
