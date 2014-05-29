@@ -10,7 +10,6 @@ jQuery(document).ready(function($) {
 
 	view(); 
 
-
 	$('.flexslider-project .flex-previous').click(function() {
 	    $('.flexslider-project').flexslider('prev')
 	    return false;		
