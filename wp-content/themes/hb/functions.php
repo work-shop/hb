@@ -37,40 +37,32 @@ function create_post_type() {
 			'taxonomies' => array('post_tag')			
 		)
 	);	
+	
+	register_post_type( 'collaboration',
+		array(
+			'labels' => array(
+				'name' => 'Collaborations',
+				'singular_name' =>'Collaboration',
+				'add_new' => 'Add New',
+			    'add_new_item' => 'Add New Collaboration',
+			    'edit_item' => 'Edit Collaboration',
+			    'new_item' => 'New Collaboration',
+			    'all_items' => 'All Collaborations',
+			    'view_item' => 'View Collaborations',
+			    'search_items' => 'Search Collaborations',
+			    'not_found' =>  'No Collaborations found',
+			    'not_found_in_trash' => 'No Collaborations found in Trash', 				
+			),
+			'public' => true,
+			'has_archive' => true,
+			'rewrite' => array('slug' => 'collaborations'),
+			'supports' => array( 'title', 'editor','thumbnail'),
+			'taxonomies' => array('post_tag')			
+		)
+	);		
 
 }
 
-function custom_taxonomy()  {
-
-	$labels = array(
-		'name'                       => _x( 'Project Categories', 'Taxonomy General Name', 'text_domain' ),
-		'singular_name'              => _x( 'Project Category', 'Taxonomy Singular Name', 'text_domain' ),
-		'menu_name'                  => __( 'Project Category', 'text_domain' ),
-		'all_items'                  => __( 'All Project Categories', 'text_domain' ),
-		'parent_item'                => __( 'Parent Project Category', 'text_domain' ),
-		'parent_item_colon'          => __( 'Parent Project Category:', 'text_domain' ),
-		'new_item_name'              => __( 'New Project Category Name', 'text_domain' ),
-		'add_new_item'               => __( 'Add New Project Category', 'text_domain' ),
-		'edit_item'                  => __( 'Edit Project Category', 'text_domain' ),
-		'update_item'                => __( 'Update Project Category', 'text_domain' ),
-		'separate_items_with_commas' => __( 'Separate Project Categories with commas', 'text_domain' ),
-		'search_items'               => __( 'Search Project Categories', 'text_domain' ),
-		'add_or_remove_items'        => __( 'Add or remove Project Categories', 'text_domain' ),
-		'choose_from_most_used'      => __( 'Choose from the most used Project Categories', 'text_domain' ),
-	);
-	$args = array(
-		'labels'                     => $labels,
-		'hierarchical'               => true,
-		'public'                     => true,
-		'show_ui'                    => true,
-		'show_admin_column'          => true,
-		'show_in_nav_menus'          => true,
-		'show_tagcloud'              => true,
-	);
-	register_taxonomy( 'project_category', 'project', $args );
-
-}
-add_action( 'init', 'custom_taxonomy', 0 );
 
 function theme_scripts() {
 	wp_deregister_script( 'jquery' );
@@ -131,6 +123,8 @@ if ( function_exists( 'add_image_size' ) ) {
 	add_image_size('project-slideshow',1440,768, true); 
 	add_image_size( 'project-small', 260, 160, true ); 
 	add_image_size( 'project-large', 540, 420, true ); 
+	add_image_size( 'headshot', 300, 300, true ); 
+
 }
 
 
@@ -173,7 +167,7 @@ function get_template_parts( $parts = array() ) {
 
 function remove_menus () {
 global $menu;
-	$restricted = array( __('Comments'),__('Plugins'),__('Appearance'),__('Pages')/* ,__('Tools'),__('Settings')  */ );
+	$restricted = array( __('Comments'),__('Appearance'),__('Pages')/*,__('Plugins') ,__('Tools'),__('Settings')  */ );
 	end ($menu);
 	while (prev($menu)){
 		$value = explode(' ',$menu[key($menu)][0]);
@@ -186,7 +180,7 @@ add_action('admin_menu', 'remove_menus');
 function remove_acf_menu(){
  
     $admins = array( 
-        'dev', 
+        'dev' 
     );
  
     $current_user = wp_get_current_user();

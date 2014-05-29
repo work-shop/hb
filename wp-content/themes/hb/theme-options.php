@@ -29,7 +29,7 @@ class acf_options_page_plugin
 		$this->settings = array(
 			'title' => __('Site Options','site_options'), // title / menu name ('Site Options')
 			'capability' => 'edit_posts', // capability to view options page
-			'pages' => array('Site Options'), // an array of sub pages ('Header, Footer, Home, etc')
+			'pages' => array('Home Page','Instagram','Info Page'), // an array of sub pages ('Header, Footer, Home, etc')
 		);
 		
 		

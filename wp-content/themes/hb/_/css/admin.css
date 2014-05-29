@@ -2,3 +2,7 @@
 .field_type-message{
 	background: #f7ff7f;
 }
+
+#cpt_info_box{
+	display: none !important;
+}
