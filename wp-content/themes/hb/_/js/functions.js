@@ -186,6 +186,10 @@ function view(){
 			
 }
 
+function flexsliderSetup(){
+	
+}
+
 
 function spy(){
 	var menu = $('#about-nav .jump-about');
@@ -214,6 +218,7 @@ function loadElements(){
 	setTimeout(function(){
 		$('.loading').addClass('loaded');
 		$('.landing').addClass('landed');
+		flexsliderSetup();
 		view();
 	},1000);		
 		
