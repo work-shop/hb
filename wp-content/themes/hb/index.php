@@ -1,4 +1,6 @@
 
+<!-- Include the head scrips, and the entire page's operating frame:
+     This correponds to the state definition for the template parts -->
 <?php get_header();?>
 
 	<section id="home" class="block loading">		
