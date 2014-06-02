@@ -1,6 +1,6 @@
 <?php
 
-get_template_parts( array( 'theme-options') );
+get_template_parts( array( 'theme-options', 'state' ) );
 
 function register_my_menus(){
 	register_nav_menus(
@@ -207,5 +207,7 @@ function be_hidden_meta_boxes($hidden, $screen) {
 
 define('MAGPIE_FETCH_TIME_OUT', 180);
 
+$state = new WSState();
+$GLOBALS['state'] = $state;
 
 ?>
