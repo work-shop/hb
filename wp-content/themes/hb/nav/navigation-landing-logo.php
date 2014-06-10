@@ -11,12 +11,12 @@
 <?php if ( $GLOBALS[ "state" ]->state() === SiteState::Landing ) { ?>
 
 
-	<img src="<?php echo get_template_directory() . "/_/img/logo.png"; ?>" />
+	<img src="<?php echo get_template_directory_uri() . "/_/img/logo.png"; ?>" />
 
 
 <?php } else { ?>
 
-	<img src="<?php echo get_template_directory() . "/_/img/logo-small.png"; ?>" />
+	<img src="<?php echo get_template_directory_uri() . "/_/img/logo-small.png"; ?>" />
 
 <?php } ?>
 </div>

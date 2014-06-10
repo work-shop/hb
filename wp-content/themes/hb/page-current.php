@@ -1,10 +1,5 @@
 <?php
 /*
-Template Name: Current
-*/
-
-
-/*
 
     page-work.php
     hb
@@ -19,7 +14,7 @@ Template Name: Current
 	get_header();
 
 	get_template_part( "nav/navigation" );
-	get_template_part( "nav/bar");
+	get_template_part( "header/navigation");
 	get_template_part( "body" );
 
 	get_footer();

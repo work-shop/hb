@@ -32,41 +32,64 @@ abstract class SiteState {
 
 
 class WSState {
-	private $registered_data_types = array();
+	private $registered_data_models = array();
 	private $site_state;
 
 
 
 	function __construct() {
-		$this->registered_data_types = array();
+		$this->registered_data_models = array();
 		$this->site_state = null;
 	}
 
-	/* the register_data_type function binds a model-data-type, ie. a WordPress post-type, or DB table
+	/* the register_data_model function binds a model-data-type, ie. a WordPress post-type, or DB table
 	 * in this state object. On a high level, this function binds an "event-string", a symbolic name,
 	 * with a method for getting the data associated with that name
 	 *
 	 *
 	 * @param $data_string : string, the name of the new data type
 	 * @param $model_hook  : string, a hook to use with the WordPress data-model
+	 * @param $state_hook  : SiteState, the SiteState that this model_data belongs to
+	 * @param $additional_mode_data : Map[String => Mixed], additional switches and options for this datum
+	 *
 	 * @return : boolean, indicating whether the hook was successfully registered.
 	 *					  if there is an existing hook with the same name, this function fails with false.
 	 *
 	 */
-	function register_data_type( $data_string, $model_hook ) {
-		if ( array_key_exists( $data_string ) ) return false;
+	function register_data_model( 
+			$data_string, 
+			$model_hook, 
+			$state_hook, 
+			$lookup_hook, 
+			$additional_model_data = array() 
+		) {
+		if ( array_key_exists( $data_string, $this->registered_data_models ) ) return false;
 
-		$registered_data_types[ $data_string ] = array(
-			'hook' => $data_hook
-		);
+		$this->registered_data_models[ $data_string ] = array_merge( array(
+			'hook' 			=> $data_hook,
+			'state' 		=> $state_hook,
+			'retrieve' 		=> $lookup_hook
+		), $additional_model_data );
 
 		return true;
 	}
 
-	/*
+	/* This function returns all the names of the data-models registered to this site. */
+	function get_registered_data_models() {
+		return array_keys( $registered_data_models );
+	}
+
+	/* Index a data-model by name. Given the name of a model, return its associated data.
+	 *
+	 * @param $data_string : string, a data-model key.
+	 * @return a model key-value hash for the given data string 
 	 */
-	function get_registered_data_types() {
-		return array_keys( $registered_data_types );
+	function get_data_model( $data_string ) {
+		if ( array_key_exists($data_string, $this->registered_data_models ) ) {
+			return $this->registered_data_models[ $data_string ]; 
+		} else {
+			return false;
+		}
 	}
 
 
@@ -90,11 +113,4 @@ class WSState {
 
 
 
-
-
-
-
-
-
 ?>
-
