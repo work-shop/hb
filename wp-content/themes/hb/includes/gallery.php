@@ -66,13 +66,19 @@
 
 		</div>
 
-	    <ul id="no-template-pager" class="cycle-pager">
+	    <ul id="no-template-pager" class="cycle-pager row">
 
-	        <?php foreach( $images as $image ): var_dump($image); ?>
 
-	            <img src="<?php echo $image['sizes']['project-small']; ?>" alt="<?php echo $image['alt']; ?>" />
+	    	<li id="left-button"></li>
+	        <?php foreach( $images as $image ): ?>
+
+	            <li class="image-button">
+	            	<?php if (!empty($image['description'])) : ?><div class="image-description"><?php echo $image['description']; ?></div><?php endif; ?>
+	            	<div class="button"></div>
+	            </li>
 
 	        <?php endforeach; ?>
+	        <li id="right-button"></li>
 
 	     </ul>
 

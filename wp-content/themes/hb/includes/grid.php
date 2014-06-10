@@ -7,7 +7,7 @@
 	accepted parameters :
 
 		$images 		<- 		the output of get_field( name ), typically
-		$block_size 	<- 		the desired size in the bootstrap schema		
+		$block_size 	<- 		the desired size in the bootstrap naming schema		
 */
 ?>
 
