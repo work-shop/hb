@@ -1,5 +1,1 @@
-<?php get_header();?>
-
-	<?php get_template_part('project'); ?>
-
-<?php get_footer();?>
+<h1>GOT HERE</h1>

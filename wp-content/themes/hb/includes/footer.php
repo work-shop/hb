@@ -5,8 +5,8 @@
 		<div class="row">
 			<div id="footer-right" class="right">
 				<a id="backtotop" href="#">back to top <span class="icon" data-icon="&#8220;"></span></a>
-				<a class="addthis_button_facebook" addthis:url="<?php the_permalink(); ?>"  addthis:title="Mikyoung Kim Design"><span class="icon social" data-icon="F"></span></a>							
-				<a class="addthis_button_twitter" addthis:url="<?php the_permalink(); ?>" addthis:title="Mikyoung Kim Design"><span class="icon social" data-icon="t"></span></a>				 
+				<a class="addthis_button_facebook" addthis:url="<?php the_permalink(); ?>"  addthis:title="<?php echo bloginfo('title'); ?>"><span class="icon social" data-icon="F"></span></a>							
+				<a class="addthis_button_twitter" addthis:url="<?php the_permalink(); ?>" addthis:title="<?php echo bloginfo('title'); ?>"><span class="icon social" data-icon="t"></span></a>				 
 			</div>			
 		
 		</div>
