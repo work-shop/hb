@@ -8,7 +8,7 @@
 ?>
 
 
-<div id="body" class="single project">
+<div id="body" class="projects">
 
 	<?php 
 		$query = new WP_Query(
