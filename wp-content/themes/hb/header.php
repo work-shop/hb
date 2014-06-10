@@ -29,7 +29,7 @@
 				   
 	<meta name="description" content="<?php bloginfo('description'); ?>">
 	<meta name="google-site-verification" content="">
-	<meta name="author" content="Work-Sop">
+	<meta name="author" content="Work-Shop">
 		
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	

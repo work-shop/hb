@@ -1,5 +1,5 @@
 
-<?php get_header();?>
+<?php get_header(); ?>
 
 	<section id="home" class="block loading">		
 		<video class="hidden-xs" autoplay="autoplay" loop poster="<?php bloginfo('template_directory'); ?>/_/img/home-poster.jpg">
@@ -12,5 +12,5 @@
 			</h1>
 		</div>
 	</section>
-
+	
 <?php get_footer(); ?>
