@@ -8,7 +8,7 @@
 		</video>	
 		<div id="overlay">
 			<h1 class="huge">
-				new website coming soon
+				new website coming soon update
 			</h1>
 		</div>
 	</section>
