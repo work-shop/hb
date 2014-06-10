@@ -14,6 +14,8 @@
 
 		<?php
 			if ( $GLOBALS[ "state" ]->state() === SiteState::Projects ) {
+				if ( is_single() ) $title = get_the_title();
+
 				$query = new WP_Query(
 					array(
 						"post_type" => "project",
@@ -24,8 +26,15 @@
 
 				echo "<ul>";
 				while ( $query->have_posts() ) {
+
 					$query->the_post();
-					echo '<li><a href="'.get_the_permalink().'">'.get_the_title().'</a></li>';
+
+					if ( is_single() && get_the_title() === $title ) {
+						echo '<li class="active"><a href="'.get_the_permalink().'">'.get_the_title().'</a></li>';
+					} else {
+						echo '<li><a href="'.get_the_permalink().'">'.get_the_title().'</a></li>';
+					}
+
 				}
 				echo "</ul>"; 
 
@@ -38,9 +47,11 @@
 		<li><a href="<?php echo get_bloginfo( 'url' ).'/collaborations'; ?>"> <?php echo "COLLABORATIONS"; ?> </a>
 		<?php
 			if ( $GLOBALS[ "state" ]->state() === SiteState::Collaborations ) {
+				if ( is_single() ) $title = get_the_title();
+				
 				$query = new WP_Query(
 					array(
-						"post_type" => "project",
+						"post_type" => "collaboration",
 						"post_status" => "publish",
 						'posts_per_page' => -1
 					)
@@ -49,7 +60,12 @@
 				echo "<ul>";
 				while ( $query->have_posts() ) {
 					$query->the_post();
-					echo '<li><a href="'.get_the_permalink().'">'.get_the_title().'</a></li>';
+
+					if ( is_single() && get_the_title() === $title ) {
+						echo '<li class="active"><a href="'.get_the_permalink().'">'.get_the_title().'</a></li>';
+					} else {
+						echo '<li><a href="'.get_the_permalink().'">'.get_the_title().'</a></li>';
+					}
 				}
 				echo "</ul>"; 
 
