@@ -13,7 +13,7 @@
 		<li><a href="<?php echo get_bloginfo( 'url' ).'/projects'; ?>"> <?php echo "PROJECTS"; ?> </a>
 
 		<?php
-			if ( $GLOBALS[ "state" ]->state() === SiteState::Work ) {
+			if ( $GLOBALS[ "state" ]->state() === SiteState::Projects ) {
 				$query = new WP_Query(
 					array(
 						"post_type" => "project",

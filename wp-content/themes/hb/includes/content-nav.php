@@ -11,35 +11,38 @@
 <nav id="nav-bar" class="col-sm-8 row">
 	<?php
 		switch ( $GLOBALS['state']->state() ) {
-			case SiteState::Work:
+			case SiteState::Projects:
 				?>
 					<div>PROJECTS</div>
-					<div id="grid_view"></div>
-					<div id="list_view"></div>
+					<div id="grid-view"></div>
+					<div id="list-view"></div>
 
 				<?php
 				break;
 			case SiteState::Collaborations:
 				?>
 					<div>COLLABORATIONS</div>
-					<div id="grid_view"></div>
-					<div id="list_view"></div>
+					<div id="grid-view"></div>
+					<div id="list-view"></div>
 
 				<?php
 				break;
 			case SiteState::Current:
 				?>
-					<div>PROJECTS</div>
-					<div id="grid_view"></div>
-					<div id="list_view"></div>
+					<div class="nav-bar-item" id="post-title"></div>
+					<div class="nav-bar-item" id="grid-view"></div>
+					<div class="nav-bar-item" id="list-view"></div>
 
 				<?php
 				break;
 			case SiteState::Info:
 				?>
-					<div>PROJECTS</div>
-					<div id="grid_view"></div>
-					<div id="list_view"></div>
+
+					<div class="nav-bar-item" id="all-button"></div>
+					
+					<div class="nav-bar-item" id="sub-tags">
+						<?php // populate hashtags via JS here ?>
+					</div>
 
 				<?php
 				break;

@@ -1,12 +1,31 @@
+ <?php
+/*
+	gallery.php
+	ws-template
 
+	This file defines a slideshow based gallery.
+
+	NB. In order for this template to work,
+	before including it, define a variable called "$images", filled to the content of
+	an ACF galler field.
+
+	EG.
+
+	$images = get_field( 'my_gallery' );
+
+
+*/
+?>
 
 <?php
 
-	$images = get_field('gallery');
+	
 	 // useful
-	if( $images ):
+	$images = $GLOBALS['parameters']['images'];
 
-		if(count($images) > 1):
+	if( $images ) :
+
+		if( count( $images ) > 1 ) :
 		// useful
 		?>
 
@@ -33,7 +52,7 @@
 
 	    <?php foreach( $images as $image ): ?>
 
-	        <img src="<?php echo $image['sizes']['gallery']; ?>" alt="<?php echo $image['alt']; ?>" />
+	        <img src="<?php echo $image['sizes']['project-slideshow']; ?>" alt="<?php echo $image['alt']; ?>" />
 
 	    <?php endforeach; ?>
 
@@ -49,9 +68,9 @@
 
 	    <ul id="no-template-pager" class="cycle-pager">
 
-	        <?php foreach( $images as $image ): ?>
+	        <?php foreach( $images as $image ): var_dump($image); ?>
 
-	            <img src="<?php echo $image['sizes']['one']; ?>" alt="<?php echo $image['alt']; ?>" />
+	            <img src="<?php echo $image['sizes']['project-small']; ?>" alt="<?php echo $image['alt']; ?>" />
 
 	        <?php endforeach; ?>
 
@@ -67,7 +86,7 @@
 
 	    <?php foreach( $images as $image ): ?>
 
-	        <img src="<?php echo $image['sizes']['gallery']; ?>" alt="<?php echo $image['alt']; ?>" />
+	        <img src="<?php echo $image['sizes']['project-slideshow']; ?>" alt="<?php echo $image['alt']; ?>" />
 
 	    <?php endforeach; ?>
 

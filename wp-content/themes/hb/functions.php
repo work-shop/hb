@@ -1,6 +1,6 @@
 <?php
 
-get_template_parts( array( 'include/stheme-options', 'includes/state' ) );
+get_template_parts( array( 'theme-options', 'state' ) );
 
 function register_my_menus(){
 	register_nav_menus(

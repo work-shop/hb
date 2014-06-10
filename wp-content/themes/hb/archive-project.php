@@ -4,7 +4,7 @@
 
 <?php
 	
-	$GLOBALS[ 'state' ]->transition( SiteState::Work );
+	$GLOBALS[ 'state' ]->transition( SiteState::Projects );
 	
 	get_template_part( "includes/header");
 

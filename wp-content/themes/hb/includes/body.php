@@ -13,7 +13,7 @@ switch ( $GLOBALS['state']->state() ) {
 	case SiteState::Landing:
 		get_template_part( "home/landing" );
 		break;
-	case SiteState::Work:
+	case SiteState::Projects:
 		get_template_part( "projects/projects" );
 		break;
 	case SiteState::Collaborations:
@@ -25,7 +25,7 @@ switch ( $GLOBALS['state']->state() ) {
 	case SiteState::Info:
 		get_template_part( "info/info" );
 		break;
-	default;
+	default:
 		echo "BROKEN";
 
 }
