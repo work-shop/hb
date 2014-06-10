@@ -25,7 +25,7 @@ switch ( $GLOBALS['state']->state() ) {
 	case SiteState::Info:
 		get_template_part( "info/info" );
 		break;
-	default;
+	default:
 		echo "BROKEN";
 
 }
