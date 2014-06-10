@@ -8,7 +8,7 @@
 */
 ?>
 
-<nav id="navigation">
+<header id="header" class="pink">
 	<ul>
 		<li><a href="<?php echo get_bloginfo( 'url' ).'/projects'; ?>"> <?php echo "PROJECTS"; ?> </a>
 
@@ -83,4 +83,4 @@
 		get_template_part( "header/header", "footer" );
 
 	?>
-</nav>
+</header>

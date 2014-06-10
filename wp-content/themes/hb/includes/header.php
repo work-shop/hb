@@ -52,4 +52,6 @@
 
 <div id="viewport">
 
+	<?php get_template_part("header/header","main"); ?>
+
 	<div id="content" class="clearfix">
