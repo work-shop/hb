@@ -1,33 +1,5 @@
-</div>
+	</div><!-- /#content -->
 
-<footer id="footer" class="bg-brand loading hidden">
-	<div class="container">
-		<div class="row">
-			<div id="footer-right" class="right">
-				<a id="backtotop" href="#">back to top <span class="icon" data-icon="&#8220;"></span></a>
-				<a class="addthis_button_facebook" addthis:url="<?php the_permalink(); ?>"  addthis:title="<?php echo bloginfo('title'); ?>"><span class="icon social" data-icon="F"></span></a>							
-				<a class="addthis_button_twitter" addthis:url="<?php the_permalink(); ?>" addthis:title="<?php echo bloginfo('title'); ?>"><span class="icon social" data-icon="t"></span></a>				 
-			</div>			
-		
-		</div>
-		<div class="row footer-nav">
-			<?php get_template_part('nav'); ?>										
-		</div>
-		<div class="row footer-info">
-			<div class="col-sm-12">
-				<p class="small centered">
-					HB LLC • 220 Allens Avenue, Providence RI 02903 • info@hbarchive.com
-				</p>
-			</div>			
-			<div class="col-sm-12">
-				<p class="small centered">
-					Copyright 2014, HB LLC •
-					<a href="<?php bloginfo('url'); ?>/wp-admin" target="_blank" class="hidden">Log In</a>
-				</p>
-			</div>	
-		</div>
-	</div>
-</footer>
 
 </div><!-- /#viewport -->
 	
@@ -45,17 +17,9 @@
 	  ga('send', 'pageview');	
 	</script>	
 	-->
-	
-	<script src="<?php bloginfo('template_directory'); ?>/_/js/jquery.js"></script>
-	<script src="<?php bloginfo('template_directory'); ?>/_/js/flexslider.js"></script>
-	<script src="<?php bloginfo('template_directory'); ?>/_/js/functions.js"></script>
-<!--
-	<script src="<?php bloginfo('template_directory'); ?>/_/js/isotope.js"></script>	
-	<script src="<?php bloginfo('template_directory'); ?>/_/js/iso.js"></script>		
--->
 
 	<script type="text/javascript">
-	     //less.env = "development"; less.watch();
+	     less.env = "development"; less.watch();
 	</script>
 
 </div>

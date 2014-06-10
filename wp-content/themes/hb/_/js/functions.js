@@ -148,7 +148,6 @@ function view(){
 	viewportTop = (ch-viewportHeight)/2;
 	viewportLeft = (cw-viewportWidth)/2;
 	
-	
 	contentWidth = viewportWidth - $("#header").width() - headerMargin;
 
 	$(".block.min").css('height',ch);	
