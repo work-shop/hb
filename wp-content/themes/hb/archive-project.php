@@ -6,12 +6,12 @@
 	
 	$GLOBALS[ 'state' ]->transition( SiteState::Work );
 	
-	get_header();
+	get_template_part( "includes/header");
 
-	get_template_part( "nav/navigation" );
-	get_template_part( "header/navigation");
-	// get_template_part( "body" );
+	get_template_part( "header/header", "main" );
+	get_template_part( "includes/content", "nav");
+	get_template_part( "includes/body" );
 
-	get_footer();
+	get_template_part( "includes/header");
 
 ?>

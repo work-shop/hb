@@ -12,12 +12,12 @@
 
 <?php if ( $GLOBALS['state']->state() === SiteState::Landing ) { ?>
 	
-	<?php get_template_part( "nav/navigation", "address" ); ?>
-	<?php get_template_part( "nav/navigation", "landing-logo"); ?>
+	<?php get_template_part( "header/header", "address" ); ?>
+	<?php get_template_part( "header/header", "landing-logo"); ?>
 
 <?php } else { ?>
 
-	<?php get_template_part( "nav/navigation", "landing-logo"); ?>
+	<?php get_template_part( "header/header", "landing-logo"); ?>
 
 <?php } ?>
 

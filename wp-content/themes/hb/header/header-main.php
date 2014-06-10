@@ -64,7 +64,7 @@
 
 	<?php
 
-		get_template_part( "nav/navigation", "footer" );
+		get_template_part( "header/header", "footer" );
 
 	?>
 </nav>

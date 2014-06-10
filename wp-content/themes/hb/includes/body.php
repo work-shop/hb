@@ -11,10 +11,10 @@
 
 switch ( $GLOBALS['state']->state() ) {
 	case SiteState::Landing:
-		get_template_part( "landing/landing" );
+		get_template_part( "home/landing" );
 		break;
 	case SiteState::Work:
-		get_template_part( "work/work" );
+		get_template_part( "projects/projects" );
 		break;
 	case SiteState::Collaborations:
 		get_template_part( "collaborations/collaborations" );
