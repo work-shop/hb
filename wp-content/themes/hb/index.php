@@ -1,6 +1,5 @@
 <?php
 /*
-
     index.php
     ws-template
 
