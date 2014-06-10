@@ -44,4 +44,12 @@
 	</div>
 
 
+	<?php ?>
+	<div id="info-view-stage">
+	<?php
+		get_template_part( 'projects/project', 'info' );
+	?>
+	</div>
+
+
 </div>
