@@ -262,7 +262,7 @@ body{
 }
 
 h1,h2,h3,h4,h5,h6,p{
-	line-height: 1.3;
+	line-height: 1.4;
 	color: @dark;
 	font-weight: normal;	
 }
@@ -276,7 +276,7 @@ h1{
 }
 
 h2{
-	font-size: 36px;
+	font-size: 30px;
 }
 
 h3{
@@ -346,7 +346,7 @@ h5,h6{
 
 #header{
 	position: fixed;
-	width: 200px;
+	width: 240px;
 	height: 93%;
 	z-index: 999;
 }
@@ -373,6 +373,15 @@ h5,h6{
 		margin-top: 0;
 		line-height: 30px;
 		font-size: 18px;
+		display: inline-block;
+	}
+	
+	ul{		
+		display: inline-block;
+
+		li{
+			display: inline-block;
+		}
 	}
 	
 	.icon{
@@ -380,15 +389,16 @@ h5,h6{
 			font-size: 27px;
 			top: -3px;
 			color: #222;
-		}
-		
-		&.off{
-			&:before{
-				color: #999;
-			}	
-		}
-		
+		}		
 	}
+		
+	.off{
+		color: #999;
+
+		:before{
+			color: #999;
+		}
+	}		
 	
 	.toggle{
 		cursor: pointer;
@@ -427,12 +437,13 @@ video{
 	
 		margin-top: 48px;
 		li{
-			padding: 4px 0;
+			padding: 3px 0;
 			
 			a{
-				font-size: 15px;
+				font-size: 14px;
 				color: @dark;
 				display: block;
+				text-transform: uppercase;
 				
 				.transition(color,.125s);
 				
@@ -442,15 +453,10 @@ video{
 			}
 			
 			ul{
-				text-indent: 15px;
-				margin-top: 5px;
-				margin-bottom: 10px;
+				margin: 10px 0 15px 15px;
 				
 				li{
 					padding: 3px 0;
-					a{
-						font-size: 16px;
-					}
 				}
 			}
 		}
@@ -482,8 +488,14 @@ video{
 
 	#header{
 		#nav{
-			margin-top: 0;	
+			//margin-top: 0;	
 		}
+			
+		#logo{
+			width: 90%;
+			max-width: 140px;
+		}
+			
 	}
 
 	&.full{
@@ -507,12 +519,6 @@ video{
 		
 	}	
 	
-	#logo{
-		width: 90%;
-		max-width: 140px;
-	}
-	
-	
 }
 
 /********** @ARCHIVE *********/
@@ -532,7 +538,12 @@ video{
 .archive-grid{
 	
 	.grid-element{
+		margin-bottom: 30px;
+		.transition(opacity,.125s);
 		
+		&:hover{
+			opacity: .5;
+		}
 	}
 	
 }
@@ -565,93 +576,136 @@ video{
 
 /********** @SINGLE *********/
 
-
-.single-project{
+.flexslider{
+	position: relative;
 	
-	.flexslider-project{
+	.slides{
 		position: relative;
-		margin-top: 60px;
+		width: 100.5%;
 		
-		.flex-viewport{
-			overflow: visible !important;
+		li{
+			opacity: 0;
+			.transition(opacity,1s);
+			background: darken(@light,3%);		
 		}
 		
-		.slides{
-			//width: 100%;
-			position: relative;
-			margin: 0;
-			
-			li{
-				box-sizing: border-box; 
-				opacity: .75;
-				.transition(opacity,.5s);
-				//margin: 0 5px;
-				//padding: 0 5px;
-			}
-			
-			.flex-active-slide{
-				opacity: 1;
-			}
+		.flex-active-slide{
+			opacity: 1;
+		}
+		
+		.flex-caption{
+			position: absolute;
 		}
 	}
 	
-	.flexslider-direction{
-		height: 99%;
-		z-index: 192;
+	ul{
+		margin: 0;
+	}
+		
+	.flex-direction-nav{
 		position: absolute;
-		top: 0%;
-		background: rgba(255,255,255,.75);
-		.transition(background,.2s);
-		//border: 1px solid gray;
+		top: 50%;
+		width: 100%;
+		z-index: 9999;
 		
-		.icon:before{
-			width: 100%;
-			position: relative;
-			top: 50%;
-			margin-top: -45px;			
-			font-size: 120px;
-			color:white;
-			float: left;
-			text-align: center;
-			.text-shadow(0,0,2px,rgba(0,0,0,.5));
-		}
-		
-		&.previous{
-			right: auto;
-			left: -100px;
-			.icon:before{
-				//float: right;
-				//text-align: right;			
-			}		
-		}
-		
-		&:hover{
-			cursor: pointer;
-			cursor: w-resize;
-			background: none;
-		}
-		
-		&.next:hover{
-			cursor: pointer;
-			cursor: e-resize;
-		}
-		
-	}
-	
-	.project-links{
-		margin-top: 30px;
-		li a{
+		a{
 			display: block;
-			padding: 10px;
-			margin-bottom: 15px;
-			background: @brand;
+			visibility: hidden;
 			
-			&:hover{
-				background: darken(@brand,10%);
+			&.flex-prev{
+				float: left;
+				margin-left: 12px;
+				&:after{
+			    	content: '›';
+			    	font-size: 50px;
+			    }
+
+			}
+			
+			&.flex-next{
+			
+				float: right;
+				margin-right: 5px;
+				
+				&:after{
+			    	content: '‹';
+			    	font-size: 50px;			    	
+			    }
+
+			}			
+			
+			&:after{
+				display: block;
+				visibility: visible;
+			    font-family: "modern_pictograms_proregular";
+				font-size: 60px;
+				position: relative;				
 			}
 		}
 	}
 	
+	.flex-control-nav{
+		margin-top: 15px;
+		text-align: center;
+		
+		li{
+			margin-left: 0;
+			margin-right: 8px;
+			display: inline-block;
+			
+			a{
+				text-indent: -9999px;
+				width: 10px;
+				height: 10px;			
+				display: block;
+				border: 2px solid #aaa;
+				.border-radius(10px);
+				background: #ccc;
+				
+				&.flex-active{
+					border: 2px solid @dark;
+				}		
+				
+				&:hover{
+					cursor: pointer;
+				}	
+			}
+
+		}
+	}
+	
+	.flex-direction-nav{
+		top: 39%;
+	}
+		
+}
+
+.info{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(255,255,255,.5);
+	z-index: 1000;
+	//padding-top: 100px;
+	
+	.info-container{
+		background: white;
+		position: absolute;
+		padding: 30px;
+	}
+	
+	h2{
+		line-height: 1.8;
+	}
+	
+	#close{
+		position: absolute;
+		top: 15px;
+		right: 15px;
+		z-index: 1001;
+	}
 }
 
 
