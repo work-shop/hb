@@ -8,7 +8,7 @@
 */
 ?>
 
-<nav id="nav-bar" class="col-sm-8 row">
+<nav id="content-nav" class="content-nav">
 	<?php
 		switch ( $GLOBALS['state']->state() ) {
 			case SiteState::Projects:

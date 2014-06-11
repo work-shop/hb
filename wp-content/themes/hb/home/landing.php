@@ -9,7 +9,7 @@
 */
 ?>
 
-<div id="landing" class="">
+<div id="landing" class="hidden-xs">
 	<video autoplay loop>
   		<source src="<?php echo get_template_directory_uri(); ?>/_/img/home-large.mp4" type="video/mp4">
   		<source src="<?php echo get_template_directory_uri(); ?>/_/img/home-large.ogg" type="video/ogg">

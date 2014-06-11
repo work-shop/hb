@@ -163,7 +163,9 @@ function view(){
 	else{
 		$("#header").css('height',viewportHeight);
 		$("#content").css('width',contentWidth);		
-		$("#content").css('left',contentLeft);				
+		$("#content").css('left',contentLeft);
+		$("#topbar").css('height',viewportTop);				
+						
 	}
 	
 	        

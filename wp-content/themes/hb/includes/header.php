@@ -48,10 +48,12 @@
 
 <body <?php body_class('before header-closed'); ?>>
 
-<div id="background" class="visible-xs"></div>
-
-<div id="viewport" class="loading">
-
-	<?php get_template_part("header/header","main"); ?>
-
-	<div id="content" class="clearfix">
+	<?php if (is_home()) { } else{ ?> <div id="topbar"></div> <?php } ?>
+	
+	<div id="background" class="visible-xs"></div>
+	
+	<div id="viewport" class="loading">
+	
+		<?php get_template_part("header/header","main"); ?>
+	
+		<div id="content" class="clearfix">

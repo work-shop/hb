@@ -7,7 +7,7 @@
 */
 ?>
 
-<div id="body" class="single project">
+<div class="body" class="project">
 
 
 
