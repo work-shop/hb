@@ -24,7 +24,7 @@
  */
 abstract class SiteState {
 	const Landing 			= 0;
-	const Projects 				= 1;
+	const Projects 			= 1;
 	const Collaborations	= 2;
 	const Current 			= 3;
 	const Info 				= 4;

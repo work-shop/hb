@@ -9,8 +9,8 @@
 ?>
 
 <header id="header" class="">
-	<ul>
-		<li><a href="<?php echo get_bloginfo( 'url' ).'/projects'; ?>"> <?php echo "PROJECTS"; ?> </a>
+	<ul id="nav">
+		<li><a href="<?php echo get_bloginfo( 'url' ).'/projects'; ?>" class="<?php if ( $GLOBALS[ "state" ]->state() === SiteState::Projects && !is_single() ): echo 'active bold'; endif;  ?>"> <?php echo "PROJECTS"; ?> </a>
 
 		<?php
 			if ( $GLOBALS[ "state" ]->state() === SiteState::Projects ) {
@@ -30,7 +30,7 @@
 					$query->the_post();
 
 					if ( is_single() && get_the_title() === $title ) {
-						echo '<li class="active"><a href="'.get_the_permalink().'">'.get_the_title().'</a></li>';
+						echo '<li><a href="'.get_the_permalink().'" class="active bold">'.get_the_title().'</a></li>';
 					} else {
 						echo '<li><a href="'.get_the_permalink().'">'.get_the_title().'</a></li>';
 					}
