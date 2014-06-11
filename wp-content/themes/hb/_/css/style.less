@@ -79,19 +79,19 @@
 }
 
 .yellow{
-	background: yellow;
+	background: #f7f77f;
 }
 
 .pink{
-	background: pink;
+	background: #d3f8ea;
 }
 
 .orange{
-	background: orange;
+	background: #f1c148;
 }
 
 .green{
-	background: green;
+	background: #83df83;
 }
 
 img,video{
@@ -317,9 +317,8 @@ h5,h6{
 
 #viewport{
 	position: relative;
-	width: 80%;
-	height: 80%;
-
+	width: 93%;
+	height: 90%;
 }
 
 #temporary-message{
@@ -348,30 +347,24 @@ h5,h6{
 }
 
 #header{
-	position: relative;
-	width: 180px;
-	height: 100%;
-	margin-right: 20px;
-	float: left;
-	
-	h4.temporary{
-		margin-top: 100px;
-	}
+	position: fixed;
+	width: 200px;
+	height: 93%;
 }
 
 video{
-	//.border-radius(2px);
+	.border-radius(2px);
 }
 
 #content{
-	float: left;
+	position: absolute;
 }
 
 
 #logo{
 	display: block;
 	width: 90%;
-	max-width: 140px;
+	max-width: 100px;
 	position: absolute;
 	bottom: -10px;
 }	
@@ -388,25 +381,20 @@ video{
 	&.crop{
 		overflow: hidden;
 	}
-	
-	
-	&#home-2{
-		video{
-			width: 66%;
-			max-width: 480px;
-			margin: 0 auto;
-		}
-	}
 		
 }
 
-.nav-main{
-	
-	a{
-		display: block;
-	}
-}
+/********** @HOME *********/
 
+.home{
+	
+	#logo{
+		width: 90%;
+		max-width: 140px;
+	}
+	
+	
+}
 
 
 /********** @PAGE *********/
@@ -1204,10 +1192,10 @@ h5,h6{
 }
 
 #viewport{
-	margin-top: 0 !important;
+	margin-top: 0 !important;	
 }
 
-#header{
+#header{ 
 	min-height: 120px;
 	float: none;
 	height: 120px !important;

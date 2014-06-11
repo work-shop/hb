@@ -140,20 +140,17 @@ function view(){
 	
 	ch = $(window).height();
 	cw = $(window).width();
-	
-	headerMargin = 20;
-	
+		
 	viewportWidth = cw*.93;
 	viewportHeight = ch*.9;
 	viewportTop = (ch-viewportHeight)/2;
 	viewportLeft = (cw-viewportWidth)/2;
-	
+	headerMargin = viewportLeft/2;	
 	contentWidth = viewportWidth - $("#header").width() - headerMargin;
-
-	$(".block.min").css('height',ch);	
+	contentLeft = $("#header").width() + headerMargin;
 
 	$("#viewport").css('width',viewportWidth);	
-	$("#viewport").css('max-height',viewportHeight);
+	$("#viewport").css('height',viewportHeight);
 	$("#viewport").css('margin-top',viewportTop);
 	$("#viewport").css('margin-left',viewportLeft);
 
@@ -164,8 +161,9 @@ function view(){
 		$("#content").css('width','100%');
 	}
 	else{
-		$("#header").css('height',contentHeight);
+		$("#header").css('height',viewportHeight);
 		$("#content").css('width',contentWidth);		
+		$("#content").css('left',contentLeft);				
 	}
 	
 	        

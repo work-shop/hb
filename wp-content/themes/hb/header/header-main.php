@@ -8,7 +8,7 @@
 */
 ?>
 
-<header id="header" class="pink">
+<header id="header" class="">
 	<ul>
 		<li><a href="<?php echo get_bloginfo( 'url' ).'/projects'; ?>"> <?php echo "PROJECTS"; ?> </a>
 

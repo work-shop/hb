@@ -50,7 +50,7 @@
 
 <div id="background" class="visible-xs"></div>
 
-<div id="viewport">
+<div id="viewport" class="loading">
 
 	<?php get_template_part("header/header","main"); ?>
 
