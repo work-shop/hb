@@ -65,6 +65,34 @@ jQuery(document).ready(function($) {
 		goToByScrollAbout(thelink);	
 
 	});	
+	
+	$(".content-nav .toggle").click(function(e){
+		e.preventDefault();
+		
+		var target = $(this).data("target");
+		
+		console.log(target);
+		targets = $('.toggle-target');
+	  
+	  	if($(this).hasClass('off')){
+		 	 $('.content-nav .toggle').removeClass('on');
+		 	 $('.content-nav .toggle').addClass('off');	  	  	
+		 	 $(this).removeClass('off');	  
+		 	 $(this).addClass('on');		 	
+		 	 $(targets).addClass('hidden');
+		 	 $(target).removeClass('hidden');
+		 	 $(target).addClass('visible');	
+		  }
+		  else if($(this).hasClass('on')){
+/*
+		 	 $(this).removeClass('on');	  
+		 	 $(this).addClass('off');
+		 	 $(targets).addClass('hidden');
+		 	 $(target).addClass('hidden');
+		 	 $(target).addClass('visible');		
+*/	  
+		 }	 
+	});		
 
 
 });//end document.ready
@@ -167,16 +195,6 @@ function view(){
 		$("#topbar").css('height',viewportTop);				
 						
 	}
-	
-	        
-	if($(window).scrollTop() >= scrollOffset && $("body").hasClass('before')){
-		$("body").removeClass('before');
-		$("body").addClass('after');		
-	} 
-	else if($(window).scrollTop() < scrollOffset && $("body").hasClass('after')){
-		$("body").removeClass('after');
-		$("body").addClass('before');		 		 		
-	} 
 	
 	if(!loaded){
 		loadElements();

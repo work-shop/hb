@@ -8,7 +8,7 @@
 ?>
 
 
-<div id="body" class="projects">
+<div class="body" id="projects">
 
 	<?php 
 	

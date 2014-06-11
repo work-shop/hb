@@ -13,17 +13,23 @@
 		switch ( $GLOBALS['state']->state() ) {
 			case SiteState::Projects:
 				?>
-					<div>PROJECTS</div>
-					<div id="grid-view"></div>
-					<div id="list-view"></div>
+					<div class="tools centered">
+						<h4>PROJECTS 
+							<span class="grid-view toggle icon icon-right on" data-icon="\" data-target=".archive-grid"></span>
+							<span class="list-view toggle icon icon-right off" data-icon="&Acirc;" data-target=".archive-list"></span>
+						</h4>
+					</div>	
 
 				<?php
 				break;
 			case SiteState::Collaborations:
 				?>
-					<div>COLLABORATIONS</div>
-					<div id="grid-view"></div>
-					<div id="list-view"></div>
+					<div class="tools centered">
+						<h4>COLLABORATIONS 
+							<span class="grid-view toggle icon icon-right off" data-icon="\" data-target=".archive-grid"></span>
+							<span class="list-view toggle icon icon-right on" data-icon="&Acirc;" data-target=".archive-list"></span>
+						</h4>
+					</div>	
 
 				<?php
 				break;
