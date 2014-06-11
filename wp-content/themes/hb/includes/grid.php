@@ -16,18 +16,20 @@
 	$images = $GLOBALS['parameters']['images'];
 	$block_size = $GLOBALS['parameters']['block-size'];
 
-	if ( !isset($block_size) ) $block_size = "col-sm-2";
+	if ( !isset($block_size) ) $block_size = "col-sm-4";
 
 	if ( $images ) :
 
 		?>
 
-		<div class="grid row">
-		
+		<div class="row">
+					
 		<?php foreach ( $images as $image ) : ?>
 
-			<div class="grid-element <?php echo $block_size; ?>">
-				<img src="<?php echo $image['sizes']['post-thumbnail']?>" alt="<?php echo $image['alt']; ?>" />
+			<div class="grid-element <?php echo 'col-sm-2'; ?>">
+				<div class="image-container">
+					<img src="<?php echo $image['sizes']['post-thumbnail']?>" alt="<?php echo $image['alt']; ?>" />
+				</div>	
 			</div>
 
 		<?php endforeach; ?>	

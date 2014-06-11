@@ -19,14 +19,16 @@
 
 		?>
 
-		<ul class="list">
+		<ul class="image-list-large">
 		
 		<?php foreach ( $images as $image ) : ?>
 
-			<li class="list-element row">
-
-				<img src="<?php echo $image['sizes']['project-slideshow']?>" alt="<?php echo $image['alt']; ?>" />
-				<div class="image-annotation"><?php echo $image['description']; ?></div> <!-- is this the correct subfield? -->
+			<li class="row">
+				<div class="image-container">
+					<img src="<?php echo $image['sizes']['project-slideshow']?>" alt="<?php echo $image['alt']; ?>" />
+				</div>
+					
+				<h4 class="image-caption"><?php echo $image['description']; ?></h4> <!-- is this the correct subfield? -->
 			</li>
 
 		<?php endforeach; ?>	
