@@ -7,7 +7,7 @@
 */
 ?>
 
-<div id="body" class="collaborations">
+<div class="body" id="collaborations">
 
 	<?php 
 	

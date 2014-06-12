@@ -1,6 +1,9 @@
 
 .field_type-message{
-	background: #f7ff7f;
+	background: #53c0e8;
+	h2{
+		margin: 0;
+	}
 }
 
 #cpt_info_box{

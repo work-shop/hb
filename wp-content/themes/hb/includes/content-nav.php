@@ -8,46 +8,65 @@
 */
 ?>
 
-<nav id="nav-bar" class="col-sm-8 row">
+<nav id="content-nav" class="content-nav">
 	<?php
 		switch ( $GLOBALS['state']->state() ) {
 			case SiteState::Projects:
 				?>
-					<div>PROJECTS</div>
-					<div id="grid-view"></div>
-					<div id="list-view"></div>
+					<div class="tools centered">
+						<h4>PROJECTS </h4>
+						<ul>
+							<li><a href="#" class="toggle on" data-target=".archive-grid"><span class="icon icon-right" data-icon="\"></span>
+</a></li>
+							<li><a href="#" class="toggle off" data-target=".archive-list"><span class="icon icon-right" data-icon="&Acirc;"></span>
+</a></li>
+						</ul>
+					</div>	
 
 				<?php
 				break;
 			case SiteState::Collaborations:
 				?>
-					<div>COLLABORATIONS</div>
-					<div id="grid-view"></div>
-					<div id="list-view"></div>
-
-				<?php
-				break;
-			case SiteState::Current:
-				?>
-					<div class="nav-bar-item" id="post-title"></div>
-					<div class="nav-bar-item" id="grid-view"></div>
-					<div class="nav-bar-item" id="list-view"></div>
+					<div class="tools centered">
+						<h4>PROJECTS </h4>
+						<ul>
+							<li><a href="#" class="toggle off" data-target=".archive-grid"><span class="icon icon-right" data-icon="\"></span>
+</a></li>
+							<li><a href="#" class="toggle on" data-target=".archive-list"><span class="icon icon-right" data-icon="&Acirc;"></span>
+</a></li>
+						</ul>
+					</div>	
 
 				<?php
 				break;
 			case SiteState::Info:
 				?>
+					<div class="tools centered">
+						<ul>
+							<li><a href="#statemenet" class="jump active">Statement</a></li>
+							<li><a href="#people" class="jump">People</a></li>
+							<li><a href="#shop" class="jump">Shop</a></li>
+							<li><a href="#clients" class="jump">Clients</a></li>
+							<li><a href="#contact" class="jump">Contact</a></li>
+						</ul>
+					</div>	
 
-					<div class="nav-bar-item" id="all-button"></div>
-					
-					<div class="nav-bar-item" id="sub-tags">
-						<?php // populate hashtags via JS here ?>
-					</div>
+				<?php
+				break;
+			case SiteState::Current:
+				?>
+					<div class="tools centered">
+						<ul>
+							<li><a href="#" class="filter active" data-target=".element">All</a></li>
+							<li><a href="#" class="filter">Hashtag </a></li>
+							<li><a href="#" class="filter">Hashtag </a></li>
+
+						</ul>
+					</div>				
 
 				<?php
 				break;
 		}
-
 
 	?>
 </nav>
