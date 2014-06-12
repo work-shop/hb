@@ -27,8 +27,9 @@
 				<div class="image-container">
 					<img src="<?php echo $image['sizes']['project-slideshow']?>" alt="<?php echo $image['alt']; ?>" />
 				</div>
-					
-				<h4 class="image-caption"><?php echo $image['description']; ?></h4> <!-- is this the correct subfield? -->
+					<?php if($image['caption']): ?>
+						<h4 class="image-caption"><?php echo $image['caption']; ?></h4> <!-- is this the correct subfield? -->
+					<?php endif; ?>
 			</li>
 
 		<?php endforeach; ?>	
