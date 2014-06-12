@@ -6,7 +6,13 @@
 
 */
 ?>
-<div class="row">
-	<p class="description col-sm-10"><?php echo get_field('description'); ?></p>
-	<div id="close" class="col-sm-2"></div>
-</div>
+<div class="info-container">
+
+	<div class="row">
+	
+		<h2 class="description col-sm-12"><?php echo get_field('description'); ?></h2>
+		<div id="close" class=""><a href="#close"><span class="icon" data-icon="&#8217;"></span></a></div>
+		
+	</div>
+	
+</div>	
