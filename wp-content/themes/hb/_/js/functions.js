@@ -58,6 +58,11 @@ jQuery(document).ready(function($) {
 
 	});	
 	
+	$(".grid .grid-element").click(function(e){
+		e.preventDefault();
+		$(this).addClass('large');
+	});		
+	
 	$(".content-nav .toggle").click(function(e){
 		e.preventDefault();
 		

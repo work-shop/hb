@@ -8,7 +8,7 @@
 */
 ?>
 
-<nav id="content-nav" class="content-nav">
+<nav class="content-nav">
 	<?php
 		switch ( $GLOBALS['state']->state() ) {
 			case SiteState::Projects:
@@ -28,7 +28,7 @@
 			case SiteState::Collaborations:
 				?>
 					<div class="tools centered">
-						<h4>PROJECTS </h4>
+						<h4>COLLABORATIONS </h4>
 						<ul>
 							<li><a href="#" class="toggle off" data-target=".archive-grid"><span class="icon icon-right" data-icon="\"></span>
 </a></li>

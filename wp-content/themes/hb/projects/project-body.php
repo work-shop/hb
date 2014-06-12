@@ -7,7 +7,7 @@
 */
 ?>
 
-<div class="body" class="project">
+<div class="body" id="project">
 
 	<?php // include the gallery ?>
 	<div class="gallery visible toggle-target" >
