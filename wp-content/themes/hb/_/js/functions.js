@@ -37,18 +37,7 @@ jQuery(document).ready(function($) {
 
 	});
 	
-	$(".info").click(function(e){
-		e.preventDefault();
-		
-		targets = $('.toggle-target');
-		target=".gallery";
-
-		 $('.content-nav .toggle').removeClass('on').addClass('off');
-		 $('.gallery-toggle').removeClass('off').addClass('on');	  
-	 	 $(targets).removeClass('visible').addClass('hidden');
-	 	 $(target).removeClass('hidden').addClass('visible');	
-		 	 	 
-	});	
+	
 	
 	$(".jump-about").click(function(e){
 		e.preventDefault();
@@ -58,22 +47,50 @@ jQuery(document).ready(function($) {
 
 	});	
 	
-	$(".content-nav .toggle").click(function(e){
-		e.preventDefault();
-		
-		var target = $(this).data("target");
-		targets = $('.toggle-target');
-	  
-	  	if($(this).hasClass('off')){
-		 	 $('.content-nav .toggle').removeClass('on').addClass('off')
-		 	 $(this).removeClass('off').addClass('on');
-		 	 $(targets).removeClass('visible').addClass('hidden');
-		 	 $(target).removeClass('hidden').addClass('visible');			 	 
-		  }
-		  else {
-		 }	 
-	});		
+	
 
+	(function () {
+		var target = ".gallery";
+
+		$(".info").click(function(e) {
+			console.log(".info callback");
+
+			e.preventDefault();
+			
+			targets = $('.toggle-target');
+			//target=".gallery";
+
+			 $('.content-nav .toggle').removeClass('on').addClass('off');
+			 $( target+'-toggle' ).removeClass('off').addClass('on');	  
+		 	 $(targets).removeClass('visible').addClass('hidden');
+		 	 $(target).removeClass('hidden').addClass('visible');	
+			 	 	 
+		});	
+
+
+		$(".content-nav .toggle").click(function(e){
+			console.log(".toggle callback");
+
+			e.preventDefault();
+			
+			if (  $(this).hasClass("info-toggle") ) {
+				console.log("info-toggle");
+				target = $(".on").data("target");
+			} 
+
+			var innertarget = $(this).data("target");
+			targets = $('.toggle-target');
+		  
+		  	if($(this).hasClass('off')){
+			 	 $('.content-nav .toggle').removeClass('on').addClass('off')
+			 	 $(this).removeClass('off').addClass('on');
+			 	 $(targets).removeClass('visible').addClass('hidden');
+			 	 $(innertarget).removeClass('hidden').addClass('visible');			 	 
+			  }
+			  else {
+			 }	 
+		});	
+	})();
 
 });//end document.ready
 
