@@ -22,9 +22,7 @@
 		</div>
 	</section>
 	<?php endif; ?>
-	
-	
-	
+
 	
 	<?php  if ( get_field('people', 'option') ) : ?>
 	<section id="people" class="block">
@@ -57,9 +55,6 @@
 	<?php endif; ?>
 	
 	
-	
-	
-	
 	<?php if ( get_field('shop_statement', 'option') ) : ?>
 	<section id="shop" class="block">
 		<?php
@@ -77,9 +72,7 @@
 		?>
 	</section>
 	<?php endif; ?>
-	
-	
-	
+		
 	
 	<?php if ( get_field("clients_statement", "option") ) : ?>
 	<section id="clients-statement" class="block">
@@ -88,14 +81,12 @@
 			echo get_field( "clients_statement", "option" );
 		?>
 		</p>
+		</div>
 	</section>
 	<?php endif; ?>
-	
-	
-	
 	
 	<section id="contact" class="block">
 	<p>Contact Form Here</p>
 	</section>
-
+	
 </div>
