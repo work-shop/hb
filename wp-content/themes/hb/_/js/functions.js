@@ -38,7 +38,6 @@ jQuery(document).ready(function($) {
 	});
 	
 	
-	
 	$(".jump-about").click(function(e){
 		e.preventDefault();
 		var thelink = $(this).attr("href");
@@ -184,7 +183,8 @@ function view(){
 	$("#viewport").css('margin-top',viewportTop);
 	$("#viewport").css('margin-left',viewportLeft);
 	
-	$(".block").css('min-height',viewportHeight);
+	$(".block").css('height',viewportHeight-50);
+	//$(".block-background").css('min-height',viewportHeight);	
 	$("#viewport").css('margin-left',viewportLeft);	
 
 	contentHeight = $("#content").height();
