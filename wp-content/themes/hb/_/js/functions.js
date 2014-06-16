@@ -210,13 +210,23 @@ function view(){
 }
 
 function flexsliderSetup(){
+
+	$('.flexslider-shop').flexslider({	
+	      animation: 'fade',
+	      controlsContainer: '.flexslider-controls',
+	      slideshowSpeed: 4000,           
+		  animationSpeed: 1000,
+	      directionNav: false
+	 });	 
+
 	$('.flexslider').flexslider({
 	      animation: 'slide',
 	      controlsContainer: '.flexslider-controls',
 	      slideshowSpeed: 5000,           
 		  animationSpeed: 700,
 	      directionNav: true
-	 });		
+	 });	
+	 	 	
 }
 
 

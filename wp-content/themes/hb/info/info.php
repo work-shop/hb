@@ -65,13 +65,13 @@
 	<?php if ( get_field('shop_statement', 'option') ) : ?>
 	<section id="shop" class="block">		
 		<?php
-			if ( get_field('shop_gallery', 'options') ) {
+			if ( get_field('shop_slideshow', 'option') ) {
 				echo '<div class="block-background">';
 					$GLOBALS['parameters'] = array(
-						'images' => get_field( 'shop_gallery', 'options' )
+						'images' => get_field( 'shop_slideshow', 'option' )
 					);
 				
-					get_template_part( 'includes/gallery' );
+					get_template_part( 'info/gallery' ,'shop' );
 					
 					unset( $GLOBALS['parameters'] );
 				echo '</div>';	
