@@ -7,7 +7,8 @@
 */
 ?>
 
-<div class="body" class="project">
+
+<div class="body" id="project-body">
 	<?php if ( $video = get_field('video') ) : ?>
 	<div id="video-view-stage">
 	<video autoplay loop>
@@ -16,7 +17,6 @@
 	</video>
 	</div>
 	<?php endif; ?>
-
 
 	<?php // include the gallery ?>
 	<div class="gallery visible toggle-target" >
