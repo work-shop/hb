@@ -34,7 +34,7 @@
 
 			if ( isset($person['headshot']) ) {
 				echo '<div class="person-headshot">';
-				echo '<img src="'.$person['headshot'].'" />';
+				echo '<img src="'.$person['headshot']['sizes']['headshot'].'" />';
 				echo '</div>';
 			}
 
