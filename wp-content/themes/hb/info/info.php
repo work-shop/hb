@@ -26,31 +26,34 @@
 	
 	<?php  if ( get_field('people', 'option') ) : ?>
 	<section id="people" class="block">
-	<?php
-		foreach (get_field('people', 'option') as $person ) {
-	
-			echo '<div class="person">';
-	
-				if ( isset($person['headshot']) ) {
-					echo '<div class="person-headshot">';
-					echo '<img src="'.$person['headshot']['sizes']['headshot'].'" />';
-					echo '</div>';
+		<div class="row">
+			<?php
+				foreach (get_field('people', 'option') as $person ) {
+			
+					echo '<div class="person col-sm-3">';
+			
+						if ( isset($person['headshot']) ) {
+							echo '<div class="person-headshot">';
+							echo '<img src="'.$person['headshot']['sizes']['headshot'].'" />';
+							echo '</div>';
+						}
+			
+						if ( isset($person['name']) ) {
+							if ( isset($person['link']) ) {
+								echo '<div class="person-name"><a href="'.$person['link'].'"><h3>'.$person['name'].'</h3></a></div>';
+							} else {
+								echo '<div class="person-name"><h3>' . $person['name'] . '</h3></div>';
+							}
+						} 
+			
+						if ( isset($person['title']) ) : echo '<div class="person-title"><h4>' . $person['title'] . '</h4></div>'; endif;
+						if ( isset($person['bio']) ) : echo '<div class="person-bio">' . $person['bio'] . '</div>'; endif;
+			
+					echo "</div>";
+
 				}
-	
-				if ( isset($person['name']) ) {
-					if ( isset($person['link']) ) {
-						echo '<div class="person-name"><a href="'.$person['link'].'"><h3>'.$person['name'].'</h3></a></div>';
-					} else {
-						echo '<div class="person-name"><h3>' . $person['name'] . '</h3></div>';
-					}
-				} 
-	
-				if ( isset($person['title']) ) : echo '<div class="person-title"><h4>' . $person['title'] . '</h4></div>'; endif;
-				if ( isset($person['bio']) ) : echo '<div class="person-bio">' . $person['bio'] . '</div>'; endif;
-	
-			echo "</div>";
-		}
-	?>
+			?>
+		</div>
 	</section>
 	<?php endif; ?>
 	
@@ -86,7 +89,7 @@
 	<?php endif; ?>
 	
 	<section id="contact" class="block">
-	<p>Contact Form Here</p>
+		<p>Contact Form Here</p>
 	</section>
 	
 </div>

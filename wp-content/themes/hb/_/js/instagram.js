@@ -17,7 +17,7 @@ var feed = new Instafeed({
 
 	success: function( resp ) {
 
-		console.log( resp );
+		// console.log( resp );
 
 		function tagsAsClasses( resp ) {
 			return resp.tags.reduce( function( prev, curr ) {
