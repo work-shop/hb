@@ -7,14 +7,18 @@
 */
 ?>
 
+<div class="body" id="info-body">
+
 <?php if ( get_field("statement", "option") ) : ?>
 <section id="statement" class="block">
-	<div class="row" style="background-image:url(<?php echo '"'.get_field('statement_background_image', 'option').'"'; ?>);"><p>
-	<?php
-		get_template_part( "header/header", "address" );
-		echo get_field( "statement", "option" );
-	?>
-	</p></div>
+	<div class="row" style="background-image:url('<?php the_field('statement_background_image', 'option'); ?>');">
+		<p>
+		<?php
+			get_template_part( "header/header", "address" );
+			the_field( "statement", "option" );
+		?>
+		</p>
+	</div>
 </section>
 <?php endif; ?>
 
@@ -92,3 +96,5 @@
 <section id="contact" class="block">
 <p>Contact Form Here</p>
 </section>
+
+</div>

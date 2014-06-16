@@ -16,9 +16,9 @@
 					<div class="tools centered">
 						<h4>PROJECTS </h4>
 						<ul>
-							<li><a href="#" class="toggle on" data-target=".archive-grid"><span class="icon icon-right" data-icon="\"></span>
+							<li><a href="#" class="toggle on" data-target=".archive-grid"><span class="icon " data-icon="\"></span>
 </a></li>
-							<li><a href="#" class="toggle off" data-target=".archive-list"><span class="icon icon-right" data-icon="&Acirc;"></span>
+							<li><a href="#" class="toggle off" data-target=".archive-list"><span class="icon " data-icon="&Acirc;"></span>
 </a></li>
 						</ul>
 					</div>	
@@ -30,9 +30,9 @@
 					<div class="tools centered">
 						<h4>COLLABORATIONS </h4>
 						<ul>
-							<li><a href="#" class="toggle off" data-target=".archive-grid"><span class="icon icon-right" data-icon="\"></span>
+							<li><a href="#" class="toggle off" data-target=".archive-grid"><span class="icon " data-icon="\"></span>
 </a></li>
-							<li><a href="#" class="toggle on" data-target=".archive-list"><span class="icon icon-right" data-icon="&Acirc;"></span>
+							<li><a href="#" class="toggle on" data-target=".archive-list"><span class="icon " data-icon="&Acirc;"></span>
 </a></li>
 						</ul>
 					</div>	
