@@ -58,9 +58,11 @@
 					<div class="tools centered">
 						<ul>
 							<li><a href="#" class="filter active" data-target=".element">All</a></li>
-							<li><a href="#" class="filter">Hashtag </a></li>
-							<li><a href="#" class="filter">Hashtag </a></li>
-
+							<?php 
+								foreach ( get_field( 'sub_hashtags', 'options' ) as $hashtag ) {
+									echo '<li><a href="#" class="filter" data-target=".'.$hashtag['sub_hashtags'].'">'.$hashtag['sub_hashtags'].'</a></li>';
+								}
+							?>
 						</ul>
 					</div>				
 

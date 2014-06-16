@@ -1,7 +1,3 @@
-
-
-<!-- Some stuff -->
-
 <?php
 	
 	$GLOBALS[ 'state' ]->transition( SiteState::Projects );

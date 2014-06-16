@@ -8,6 +8,15 @@
 ?>
 
 <div class="body" class="project">
+	<?php if ( $video = get_field('video') ) : ?>
+	<div id="video-view-stage">
+	<video autoplay loop>
+  		<source src="<?php echo $video; ?>" />
+		Your browser does not support the video tag.	
+	</video>
+	</div>
+	<?php endif; ?>
+
 
 	<?php // include the gallery ?>
 	<div class="gallery visible toggle-target" >
