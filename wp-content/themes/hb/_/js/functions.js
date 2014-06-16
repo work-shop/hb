@@ -183,6 +183,9 @@ function view(){
 	$("#viewport").css('height',viewportHeight);
 	$("#viewport").css('margin-top',viewportTop);
 	$("#viewport").css('margin-left',viewportLeft);
+	
+	$(".block").css('min-height',viewportHeight);
+	$("#viewport").css('margin-left',viewportLeft);	
 
 	contentHeight = $("#content").height();
 	
@@ -196,7 +199,7 @@ function view(){
 		$("#content").css('left',contentLeft);
 		$("#topbar").css('height',viewportTop);
 		$(".info-container").css('width',contentWidth);									
-		$(".info-container").css('height',viewportHeight-(viewportTop));													$(".info-container").css('left',contentLeft+viewportLeft);	
+		$(".info-container").css('height',viewportHeight-(viewportTop));							$(".info-container").css('left',contentLeft+viewportLeft);	
 		$(".info-container").css('top',viewportTop+50);			
 	}
 	
