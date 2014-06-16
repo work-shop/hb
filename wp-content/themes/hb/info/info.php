@@ -11,7 +11,7 @@
 	
 	<?php if ( get_field("statement", "option") ) : ?>
 	<section id="statement" class="block">
-		<div class="row" style="background-image:url('<?php the_field('statement_background_image', 'option'); ?>');">
+		<div class="row" style="background-image:url('<?php echo get_field('statement_background_image', 'option')['sizes']['large']; ?>');">
 			<div class="col-md-10 col-md-offset-1">
 				<?php get_template_part( "header/header", "address" ); ?>
 			</div>	
@@ -34,7 +34,7 @@
 			
 						if ( isset($person['headshot']) ) {
 							echo '<div class="person-headshot">';
-							echo '<img src="'.$person['headshot'].'" />';
+							echo '<img src="'.$person['headshot']['sizes']['headshot'].'" />';
 							echo '</div>';
 						}
 			
@@ -50,6 +50,7 @@
 						if ( isset($person['bio']) ) : echo '<div class="person-bio">' . $person['bio'] . '</div>'; endif;
 			
 					echo "</div>";
+
 				}
 			?>
 		</div>
