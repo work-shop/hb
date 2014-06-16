@@ -47,7 +47,12 @@ jQuery(document).ready(function($) {
 
 	});	
 	
+	$(".grid .grid-element").click(function(e){
+		e.preventDefault();
+		$(this).addClass('large');
+	});		
 	
+
 
 	(function () {
 		var target = ".gallery";
