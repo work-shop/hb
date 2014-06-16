@@ -24,9 +24,9 @@
 
 		<div class="row">
 					
-		<?php foreach ( $images as $image ) : ?>
+		<?php foreach ( $images as $i => $image ) : ?>
 
-			<div class="grid-element <?php echo 'col-sm-2'; ?>">
+			<div class="grid-element <?php echo 'col-sm-3'; ?>" data-index="<?php echo $i; ?>">
 				<div class="image-container">
 					<img src="<?php echo $image['sizes']['post-thumbnail']?>" alt="<?php echo $image['alt']; ?>" />
 				</div>	

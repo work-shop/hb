@@ -46,9 +46,16 @@ jQuery(document).ready(function($) {
 
 	});	
 	
+	/* transitions 
+	 * 
+	 * */
 	$(".grid .grid-element").click(function(e){
 		e.preventDefault();
-		$(this).addClass('large');
+		//$(this).addClass('large');
+		console.log( "callback" );
+		$( ".content-nav .gallery-toggle" ).trigger( "click" );
+		$('.flexslider').flexslider( parseInt( $(this).data("index") ) );
+
 	});		
 	
 
