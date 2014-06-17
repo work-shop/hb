@@ -1,12 +1,15 @@
 
 $(function(){
 
-    var $container = $('#grid');
+    var $container = $('#instafeed');
 
-	$container.isotope({
-	  masonry: {
-	    columnWidth: 140 }
-	});
+	$container.on("insta-ready", function() {
+		$container.isotope({
+			 resizable: false, // disable normal resizing
+			  // set columnWidth to a percentage of container width
+			  masonry: { columnWidth: $container.width() / 4 }
+		});				  
+
 
 	  $.Isotope.prototype._masonryResizeChanged = function() {
 		 return true;
@@ -25,11 +28,11 @@ $(function(){
 
   };
 
-var $optionSets = $('.option-set #options'),
-  $optionLinks = $optionSets.children(':not(.exclude)');
+$optionLinks = $('.option-set .filter');
 
 $optionLinks.click(function(){
 var $this = $(this);
+console.log('clicked');
 // don't proceed if already selected
 if ( $this.hasClass('selected') ) {
   return false;
@@ -38,7 +41,7 @@ var $optionSet = $this.parents('.option-set');
 $optionSet.find('.selected').removeClass('selected');
 $this.addClass('selected');
 
-var container = $( "#grid" );
+var container = $( "#instafeed" );
 
 container.isotope({ filter: $(this).attr("data-option-value") });
 
@@ -68,5 +71,7 @@ if ( key === 'layoutMode' && typeof changeLayoutMode === 'function' ) {
 
 return false;
 });
+
+	})
 
 });

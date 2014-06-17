@@ -69,6 +69,8 @@ function theme_scripts() {
     
     wp_register_script( 'jquery', get_template_directory_uri() . '/_/js/jquery.js');
     wp_register_script( 'less', get_template_directory_uri() . '/_/js/less.js');
+    wp_register_script( 'isotope', get_template_directory_uri() . '/_/js/isotope.js');
+    wp_register_script( 'iso', get_template_directory_uri() . '/_/js/iso.js');
     wp_register_script( 'bootstrap', get_template_directory_uri() . '/_/js/bootstrap.min.js');
     wp_register_script( 'flexslider', get_template_directory_uri() . '/_/js/flexslider.js');
     wp_register_script( 'instafeed', get_template_directory_uri() . '/_/js/instafeed.min.js' );           
@@ -76,6 +78,8 @@ function theme_scripts() {
 
 
     wp_enqueue_script( 'jquery' );
+    // wp_enqueue_script( 'isotope' );
+   // wp_enqueue_script( 'iso' );
     wp_enqueue_script( 'less' );    
     wp_enqueue_script( 'bootstrap' );
     wp_enqueue_script( 'flexslider' ); 

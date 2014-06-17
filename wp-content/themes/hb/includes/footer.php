@@ -17,6 +17,8 @@
 	  ga('send', 'pageview');	
 	</script>	
 	-->
+	<script type="text/javascript" lang="javascript" src="<?php echo get_template_directory_uri().'/_/js/isotope.js'; ?>"></script>		
+	<script type="text/javascript" lang="javascript" src="<?php echo get_template_directory_uri().'/_/js/iso.js'; ?>"></script>	
 
 	<script type="text/javascript">
 	     less.env = "development"; less.watch();
