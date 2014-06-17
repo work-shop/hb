@@ -11,11 +11,13 @@
 	
 	<?php if ( get_field("statement", "option") ) : ?>
 	<section id="statement" class="block">
-		<div class="row" style="background-image:url('<?php echo get_field('statement_background_image', 'option')['sizes']['large']; ?>');">
+		<div class="block-background" style="background-image:url('<?php echo get_field('statement_background_image', 'option')['sizes']['large']; ?>');"></div>
+			
+		<div class="row">	
 			<div class="col-md-10 col-md-offset-1">
 				<?php get_template_part( "header/header", "address" ); ?>
 			</div>	
-			<div class="col-md-10 col-md-offset-1">
+			<div class="col-md-10 col-md-offset-1 text">
 				<h3><?php the_field( "statement", "option" ); ?></h3>
 			</div>
 			
@@ -32,10 +34,12 @@
 			
 					echo '<div class="person col-sm-3">';
 			
-						if ( isset($person['headshot']) ) {
+						if ($person['headshot']) {
 							echo '<div class="person-headshot">';
 							echo '<img src="'.$person['headshot']['sizes']['headshot'].'" />';
 							echo '</div>';
+						} else {
+							echo '<img src="'.get_bloginfo('template_directory').'/_/img/blank.jpg" />';
 						}
 			
 						if ( isset($person['name']) ) {
@@ -59,31 +63,34 @@
 	
 	
 	<?php if ( get_field('shop_statement', 'option') ) : ?>
-	<section id="shop" class="block">
+	<section id="shop" class="block">		
 		<?php
-			if ( get_field('shop_gallery', 'options') ) {
-				$GLOBALS['parameters'] = array(
-						'images' => get_field( 'shop_gallery', 'options' )
-				);
-			
-				get_template_part( 'includes/gallery' );
+			if ( get_field('shop_slideshow', 'option') ) {
+				echo '<div class="block-background">';
+					$GLOBALS['parameters'] = array(
+						'images' => get_field( 'shop_slideshow', 'option' )
+					);
 				
-				unset( $GLOBALS['parameters'] );
+					get_template_part( 'info/gallery' ,'shop' );
+					
+					unset( $GLOBALS['parameters'] );
+				echo '</div>';	
 			}
 	
-			echo '<div id="shop-overlay">'.get_field('shop_statement').'</div>';
+			echo '<div id="shop-overlay" class="row"><div class="col-sm-10 col-sm-offset-1 text"><h2>'.get_field('shop_statement','option').'</h2></div></div>';
 		?>
 	</section>
 	<?php endif; ?>
-		
-	
+
+
 	<?php if ( get_field("clients_statement", "option") ) : ?>
-	<section id="clients-statement" class="block">
-		<p>
-		<?php
-			echo get_field( "clients_statement", "option" );
-		?>
-		</p>
+	<section id="clients" class="block">
+		<div class="block-background" style="background-image:url('<?php echo get_field('client_background_image', 'option')['sizes']['large']; ?>');"></div>	
+	
+		<div class="row">	
+			<div class="col-md-10 col-md-offset-1 text">
+				<h3><?php the_field( "clients_statement", "option" ); ?></h3>
+			</div>
 		</div>
 	</section>
 	<?php endif; ?>

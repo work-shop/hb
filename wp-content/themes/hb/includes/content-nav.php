@@ -41,13 +41,13 @@
 				break;
 			case SiteState::Info:
 				?>
-					<div class="tools centered">
+					<div class="tools centered" id="about-nav">
 						<ul>
-							<li><a href="#statemenet" class="jump active">Statement</a></li>
-							<li><a href="#people" class="jump">People</a></li>
-							<li><a href="#shop" class="jump">Shop</a></li>
-							<li><a href="#clients" class="jump">Clients</a></li>
-							<li><a href="#contact" class="jump">Contact</a></li>
+							<li><a href="#statement" class="jump-about active">Statement</a></li>
+							<li><a href="#people" class="jump-about">People</a></li>
+							<li><a href="#shop" class="jump-about">Shop</a></li>
+							<li><a href="#clients" class="jump-about">Clients</a></li>
+							<li><a href="#contact" class="jump-about">Contact</a></li>
 						</ul>
 					</div>	
 
@@ -56,13 +56,16 @@
 			case SiteState::Current:
 				?>
 					<div class="tools centered">
-						<ul>
-							<li><a href="#" class="filter active" data-target=".element">All</a></li>
+						<ul>	
+							<h4><a href="#" class="filter active" data-target=".element">#<?php the_field( 'main_hashtag', 'option' ); ?></a></h4>				
+						<?php if(get_field( 'sub_hashtags', 'option' )){ ?>
+							
 							<?php 
-								foreach ( get_field( 'sub_hashtags', 'options' ) as $hashtag ) {
-									echo '<li><a href="#" class="filter" data-target=".'.$hashtag['sub_hashtags'].'">'.$hashtag['sub_hashtags'].'</a></li>';
-								}
-							?>
+								$hashtags = get_field( 'sub_hashtags', 'option' );
+								foreach ($hashtags as $hashtag ) :
+									echo '<li><a href="#" class="filter" data-target=".'.$hashtag['sub_hashtags'].'">#'.$hashtag['sub_hashtags'].'</a></li>';
+								endforeach; ?>
+							<?php } else{ }?>
 						</ul>
 					</div>				
 

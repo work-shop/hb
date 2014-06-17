@@ -6,7 +6,7 @@
  */
 ?>
 
-<div id="instafeed" class="row"></div>
+<div id="instafeed" class="body"></div>
 <div id="more-button"></div>
 
 <?php

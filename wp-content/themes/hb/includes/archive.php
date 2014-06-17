@@ -7,16 +7,16 @@ if ( isset($query) && isset($post_type) ) :
 
 	$grid_accumulator = '<div id="'.$post_type.'-grid" class="row archive-grid toggle-target';
 		if ( $GLOBALS[ "state" ]->state() === SiteState::Projects ) {
-			$grid_accumulator .= ' visible">';
+			$grid_accumulator .= ' on">';
 		} else{
-			$grid_accumulator .= ' hidden">';
+			$grid_accumulator .= ' off">';
 		}
 	
 	$list_accumulator = '<div id="'.$post_type.'-list" class="archive-list toggle-target';
 		if ( $GLOBALS[ "state" ]->state() === SiteState::Collaborations ) {
-			$list_accumulator .= ' visible">';
+			$list_accumulator .= ' on">';
 		} else{
-			$list_accumulator .= ' hidden">';
+			$list_accumulator .= ' off">';
 		}	
 	
 

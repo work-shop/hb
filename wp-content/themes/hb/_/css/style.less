@@ -4,7 +4,7 @@
 
 @brand: #1d5099;
 
-@dark: #333;
+@dark: #222;
 
 @mid: #ccc;
 
@@ -78,6 +78,16 @@
 	outline: 1px solid #ccc;
 }
 
+.background(){
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 0;
+	background-size: cover;	
+}
+
 /********** @OBJECT-ORIENTED *********/
 
 
@@ -147,6 +157,11 @@ img,video{
 .bg-gradient{
 	.gradient();
 }
+
+.background{
+	.background();
+}	
+	
 
 .btn-shadow(){
 	.shadow(0,3px,0,darken(@brand,5%));
@@ -298,6 +313,10 @@ h5,h6{
 		font-size: 18px;
 	}
 	
+	h1,h2,h3,h4,h5,h6{
+		line-height: 1.7;
+	}
+	
 	ul{
 		list-style: disc;
 	}
@@ -375,6 +394,7 @@ h5,h6{
 		font-size: 18px;
 		display: inline-block;
 		margin-right: 15px;
+		text-transform: uppercase;
 	}
 	
 	ul{		
@@ -424,7 +444,6 @@ h5,h6{
 .block{
 	position: relative;
 	width: 100%;
-	outline: 2px solid yellow;
 		
 	&.padded{
 		padding: 7% 0;
@@ -432,6 +451,16 @@ h5,h6{
 	
 	&.crop{
 		overflow: hidden;
+	}
+	
+	.block-background{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		z-index: 0;
+		background-size: cover;
 	}
 		
 }
@@ -478,7 +507,7 @@ video{
 		width: 90%;
 		max-width: 90px;
 		position: absolute;
-		bottom: -20px;
+		bottom: -10px;
 	}
 	
 	address{
@@ -499,9 +528,6 @@ video{
 .home{
 
 	#header{
-		#nav{
-			//margin-top: 0;	
-		}
 			
 		#logo{
 			width: 90%;
@@ -510,26 +536,24 @@ video{
 			
 	}
 
-	&.full{
-
-		#header{
-			z-index: 1;
-			
-			*{
-				color: white !important;
-			}
-		}
+	#header{
+		z-index: 1;
 		
-		#content{
-			position: fixed;
-			width: 98% !important;
-			height: 94% !important;
-			top: 1%  !important;
-			left: 1%  !important;
-			z-index: 0;
+		*{
+			color: white !important;
 		}
-		
-	}	
+	}
+	
+	#content{
+		overflow: hidden;
+		position: fixed;
+		width: 100% !important;
+		height: 100% !important;
+		top: 0px  !important;
+		left: 0px  !important;
+		z-index: 0;
+		border: 15px solid @light;
+	}
 	
 }
 
@@ -583,10 +607,24 @@ video{
 	.image-container{
 		background: darken(@light,3%);		
 	}
+	
 }
 
 
 /********** @SINGLE *********/
+
+
+.toggle-target{
+	opacity: 0;
+	.transition(opacity,.75s);
+	z-index: -999;
+	position: absolute;
+	
+	&.on{
+		opacity: 1;
+		z-index: 1;
+	}
+}
 
 .flexslider{
 	position: relative;
@@ -699,7 +737,10 @@ video{
 	top: 0;
 	left: 0;
 	background: rgba(255,255,255,.75);
-	z-index: 1000;
+	
+	&.on{
+		z-index: 1000;
+	}
 	//padding-top: 100px;
 	
 	.info-container{
@@ -754,6 +795,44 @@ video{
 		height: 100%;			
 	}
 }
+
+
+/********** @INFO PAGE *********/
+
+#info-body{
+
+	.block{
+		padding: 7% 0 5% 0;
+		margin: 0% 0 5% 0;
+	}
+	
+	.block-background{
+		opacity: .2;
+	}
+
+}
+
+#shop-overlay{
+	position: absolute;
+	top: 15%;
+	z-index: 2;
+}
+
+
+#about-nav{
+	ul li{
+
+ a{
+ 	.transition(none,.125s);
+ 	font-weight: normal;
+	 	&.active{
+			.bold();
+		}	
+	}
+	
+	}
+}
+
 
 
 /********** @UTILITIES *********/
