@@ -20,8 +20,6 @@
 
 	<?php 
 
-	var_dump( get_field('video') );
-
 		$GLOBALS['parameters'] = array(
 			'images' => get_field( 'gallery' ),
 			'block-size' => 'col-sm-2'
