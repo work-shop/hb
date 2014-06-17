@@ -19,7 +19,7 @@
 	<?php endif; ?>
 
 	<?php // include the gallery ?>
-	<div class="gallery visible toggle-target" >
+	<div class="gallery on toggle-target" >
 		<?php 
 	
 			$GLOBALS['parameters'] = array(
@@ -34,7 +34,7 @@
 
 
 	<?php // include the grid ?>
-	<div class="grid hidden toggle-target" >
+	<div class="grid off toggle-target" >
 		<?php 
 			get_template_part( 'includes/grid' );
 		?>
@@ -43,7 +43,7 @@
 
 
 	<?php // include the list ?>
-	<div class="list hidden toggle-target" >
+	<div class="list off toggle-target" >
 		<?php 
 			get_template_part( 'includes/list' );
 			unset( $GLOBALS['parameters'] );
@@ -52,7 +52,7 @@
 
 
 	<?php ?>
-	<div class="info hidden toggle-target">
+	<div class="info off toggle-target">
 		<?php
 			get_template_part( 'projects/project', 'info' );
 		?>

@@ -170,7 +170,7 @@ function get_template_parts( $parts = array() ) {
 
 function remove_menus () {
 global $menu;
-	$restricted = array( __('Comments'),__('Appearance')/*,__('Pages'),__('Plugins') ,__('Tools'),__('Settings')  */ );
+	$restricted = array( __('Comments'),__('Appearance')/*,__('Plugins') ,__('Tools'),__('Settings')  */ );
 	end ($menu);
 	while (prev($menu)){
 		$value = explode(' ',$menu[key($menu)][0]);
@@ -218,24 +218,6 @@ $state = new WSState();
 
 // 	// $state->register_data_type( "work", "projects", SiteState::Work );
 // 	// $state->register_data_type( "collaborations", "collaborations", SiteState::Collaborations );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 $GLOBALS['state'] = $state;

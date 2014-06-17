@@ -17,7 +17,7 @@
 			<div class="col-md-10 col-md-offset-1">
 				<?php get_template_part( "header/header", "address" ); ?>
 			</div>	
-			<div class="col-md-10 col-md-offset-1">
+			<div class="col-md-10 col-md-offset-1 text">
 				<h3><?php the_field( "statement", "option" ); ?></h3>
 			</div>
 			
@@ -77,19 +77,20 @@
 				echo '</div>';	
 			}
 	
-			echo '<div id="shop-overlay"><h3>'.get_field('shop_statement').'</h3></div>';
+			echo '<div id="shop-overlay" class="row"><div class="col-sm-10 col-sm-offset-1 text"><h2>'.get_field('shop_statement','option').'</h2></div></div>';
 		?>
 	</section>
 	<?php endif; ?>
-		
-	
+
+
 	<?php if ( get_field("clients_statement", "option") ) : ?>
-	<section id="clients-statement" class="block">
-		<p>
-		<?php
-			echo get_field( "clients_statement", "option" );
-		?>
-		</p>
+	<section id="clients" class="block">
+		<div class="block-background" style="background-image:url('<?php echo get_field('client_background_image', 'option')['sizes']['large']; ?>');"></div>	
+	
+		<div class="row">	
+			<div class="col-md-10 col-md-offset-1 text">
+				<h3><?php the_field( "clients_statement", "option" ); ?></h3>
+			</div>
 		</div>
 	</section>
 	<?php endif; ?>

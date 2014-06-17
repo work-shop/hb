@@ -52,7 +52,6 @@ jQuery(document).ready(function($) {
 	$(".grid .grid-element").click(function(e){
 		e.preventDefault();
 		//$(this).addClass('large');
-		console.log( "callback" );
 		$( ".content-nav .gallery-toggle" ).trigger( "click" );
 		$('.flexslider').flexslider( parseInt( $(this).data("index") ) );
 
@@ -73,8 +72,8 @@ jQuery(document).ready(function($) {
 
 			 $('.content-nav .toggle').removeClass('on').addClass('off');
 			 $( target+'-toggle' ).removeClass('off').addClass('on');	  
-		 	 $(targets).removeClass('visible').addClass('hidden');
-		 	 $(target).removeClass('hidden').addClass('visible');	
+		 	 $(targets).removeClass('on').addClass('off');
+		 	 $(target).removeClass('off').addClass('on');	
 			 	 	 
 		});	
 
@@ -95,8 +94,8 @@ jQuery(document).ready(function($) {
 		  	if($(this).hasClass('off')){
 			 	 $('.content-nav .toggle').removeClass('on').addClass('off')
 			 	 $(this).removeClass('off').addClass('on');
-			 	 $(targets).removeClass('visible').addClass('hidden');
-			 	 $(innertarget).removeClass('hidden').addClass('visible');			 	 
+			 	 $(targets).removeClass('on').addClass('off');
+			 	 $(innertarget).removeClass('off').addClass('on');			 	 
 			  }
 			  else {
 			 }	 
@@ -143,7 +142,7 @@ function goToByScroll(locale){
 
 function goToByScrollAbout(locale){
 	$('html,body').animate({
-		scrollTop: $(locale).offset().top - 0
+		scrollTop: $(locale).offset().top - 100
 	},2000);
 }
 
@@ -172,7 +171,7 @@ function navToggle() {
 
 function view(){
 	
-	//spy();
+	spy();
 	
 	ch = $(window).height();
 	cw = $(window).width();
@@ -187,6 +186,10 @@ function view(){
 
 	$("#viewport").css('width',viewportWidth);	
 	$("#viewport").css('height',viewportHeight);
+/*
+	$(".home #content").css('height',ch-30);	
+	$(".home #content").css('width',cw-30);		
+*/
 	$("#viewport").css('margin-top',viewportTop);
 	$("#viewport").css('margin-left',viewportLeft);
 	

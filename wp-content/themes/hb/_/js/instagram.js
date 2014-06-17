@@ -27,7 +27,7 @@ var feed = new Instafeed({
 
 		for ( var i = 0; i < resp.data.length; i++ ) {
 			var html = '<div class="element col-sm-2 '+ tagsAsClasses( resp.data[ i ] ) + '">'
-			         + '<a href="' + resp.data[ i ].link + '">'
+			         + '<a href="' + resp.data[ i ].link + '" target="_blank">'
 			         + '<img src="' + resp.data[ i ].images.low_resolution.url + '" />'
 			         + '</a></div>';
 
