@@ -19,16 +19,16 @@ if ( isset($query) && isset($post_type) ) :
 			$list_accumulator .= ' off">';
 		}	
 	
-
+	$i = 0;
 	while ( $query->have_posts() ) {
 
 		$query->the_post();
 
-		$grid_accumulator .= '<div class="grid-element col-sm-3">'
+		$grid_accumulator .= '<div class="grid-element col-sm-3" data-index="'.$i.'">'
 						  .  '<a href="'.get_permalink().'">'
 						  .  '<div class="image-container">';						  
 
-		$list_accumulator .= '<div class="list-element row">'
+		$list_accumulator .= '<div class="list-element row" data-index="'.$i.'">'
 						  .  '<a href="'.get_permalink().'">'
 						  .  '<div class="image-container">';
 
@@ -44,6 +44,8 @@ if ( isset($query) && isset($post_type) ) :
 
 		$grid_accumulator .= '</div></a></div>';
 		$list_accumulator .= '</a></div>';
+
+		$i++;
 
 	}
 
