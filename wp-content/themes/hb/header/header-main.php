@@ -25,16 +25,17 @@
 				);
 
 				echo "<ul>";
+				$i = 0;
 				while ( $query->have_posts() ) {
 
 					$query->the_post();
 
 					if ( is_single() && get_the_title() === $title ) {
-						echo '<li><a href="'.get_the_permalink().'" class="active bold">'.get_the_title().'</a></li>';
+						echo '<li class="header-link"><a href="'.get_the_permalink().'" class="active bold" data-index="'.$i.'">'.get_the_title().'</a></li>';
 					} else {
-						echo '<li><a href="'.get_the_permalink().'">'.get_the_title().'</a></li>';
+						echo '<li class="header-link"><a href="'.get_the_permalink().'" data-index="'.$i.'">'.get_the_title().'</a></li>';
 					}
-
+					$i++;
 				}
 				echo "</ul>"; 
 
@@ -58,14 +59,17 @@
 				);
 
 				echo "<ul>";
+				$i = 0;
 				while ( $query->have_posts() ) {
+
 					$query->the_post();
 
 					if ( is_single() && get_the_title() === $title ) {
-						echo '<li class="active"><a href="'.get_the_permalink().'">'.get_the_title().'</a></li>';
+						echo '<li class="header-link"><a href="'.get_the_permalink().'" class="active bold" data-index="'.$i.'">'.get_the_title().'</a></li>';
 					} else {
-						echo '<li><a href="'.get_the_permalink().'">'.get_the_title().'</a></li>';
+						echo '<li class="header-link"><a href="'.get_the_permalink().'" data-index="'.$i.'">'.get_the_title().'</a></li>';
 					}
+					$i++;
 				}
 				echo "</ul>"; 
 

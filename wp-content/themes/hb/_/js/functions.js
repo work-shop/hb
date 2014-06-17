@@ -56,6 +56,37 @@ jQuery(document).ready(function($) {
 		$('.flexslider').flexslider( parseInt( $(this).data("index") ) );
 
 	});		
+
+	(function() {
+		var targetOpacity = 0.2;
+
+		var a = $(".header-link a").bind("mouseover", function() {
+			
+			var idx = $( this ).data("index");
+			
+			$(".grid-element").each( function( index, that ) {
+				that = $(that);
+				if ( index == idx ) {
+					$( that ).css("opacity", targetOpacity);
+				}
+			});
+
+		}).bind( "mouseout", function() {
+
+			var idx = $( this ).data("index");
+			
+			$(".grid-element").each( function( index, that ) {
+				that = $(that);
+				if ( index == idx ) {
+					$( that ).attr("style", null);
+				}
+			});
+
+		});
+
+	})();
+
+	
 	
 
 
