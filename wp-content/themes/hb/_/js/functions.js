@@ -58,7 +58,7 @@ jQuery(document).ready(function($) {
 	});		
 
 	(function() {
-		var targetOpacity = 0.2;
+		var targetOpacity = 1;
 
 		var a = $(".header-link a").bind("mouseover", function() {
 			
