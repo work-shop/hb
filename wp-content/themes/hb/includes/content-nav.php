@@ -55,15 +55,15 @@
 				break;
 			case SiteState::Current:
 				?>
-					<div class="tools centered">
-						<ul>	
-							<h4><a href="#" class="filter active" data-target=".element">#<?php the_field( 'main_hashtag', 'option' ); ?></a></h4>				
+					<div class="tools centered option-set" id="filters">
+						<ul id="options">	
+							<h4><a href="#" class="filter selected" data-option-value="*">#<?php the_field( 'main_hashtag', 'option' ); ?></a></h4>				
 						<?php if(get_field( 'sub_hashtags', 'option' )){ ?>
 							
 							<?php 
 								$hashtags = get_field( 'sub_hashtags', 'option' );
 								foreach ($hashtags as $hashtag ) :
-									echo '<li><a href="#" class="filter" data-target=".'.$hashtag['sub_hashtags'].'">#'.$hashtag['sub_hashtags'].'</a></li>';
+									echo '<li><a href="#" class="filter" data-option-value=".'.$hashtag['sub_hashtags'].'">#'.$hashtag['sub_hashtags'].'</a></li>';
 								endforeach; ?>
 							<?php } else{ }?>
 						</ul>

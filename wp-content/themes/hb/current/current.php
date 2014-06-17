@@ -6,7 +6,8 @@
  */
 ?>
 
-<div id="instafeed" class="body"></div>
+<div id="instafeed" class="body clearfix">	
+</div>
 <div id="more-button"></div>
 
 <?php
