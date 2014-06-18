@@ -10,10 +10,10 @@
 
 <div class="body" id="project-body">
 	<?php if ( $video = get_field('video') ) : ?>
-	<div id="video-view-stage">
+	<div class="video toggle-target">
 	<video autoplay loop>
   		<source src="<?php echo $video; ?>" />
-		Your browser does not support the video tag.	
+		Your browser does not support video. 	
 	</video>
 	</div>
 	<?php endif; ?>
