@@ -174,7 +174,7 @@ function get_template_parts( $parts = array() ) {
 
 function remove_menus () {
 global $menu;
-	$restricted = array( __('Comments'),__('Appearance')/*,__('Plugins') ,__('Tools'),__('Settings')  */ );
+	$restricted = array( __('Comments'),__('Appearance'),__('Plugins') ,__('Tools'),__('Settings'),__('Pages'),__('Posts'),__('Media')    );
 	end ($menu);
 	while (prev($menu)){
 		$value = explode(' ',$menu[key($menu)][0]);

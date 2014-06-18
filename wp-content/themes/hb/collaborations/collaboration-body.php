@@ -20,27 +20,25 @@
 
 	<?php 
 
-	var_dump( get_field('video') );
-
 		$GLOBALS['parameters'] = array(
 			'images' => get_field( 'gallery' ),
 			'block-size' => 'col-sm-2'
 		);
 
 	?>
-	<div id="info-view-stage">
+	<div id="info-view-stage" class="">
 	<?php get_template_part( 'collaborations/collaboration', 'info' ); ?>
 	</div>
 
 
 	<?php // include the grid ?>
-	<div id="grid-view-stage" >
+	<div id="grid-view-stage" class="grid off toggle-target">
 	<?php get_template_part( 'includes/grid' ); ?>
 	</div>
 
 
 	<?php // include the gallery ?>
-	<div id="gallery-view-stage" >
+	<div id="gallery-view-stage" class="gallery on toggle-target" >
 	<?php get_template_part( 'includes/gallery' ); ?>
 	</div>
 

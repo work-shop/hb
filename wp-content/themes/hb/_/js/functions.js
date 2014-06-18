@@ -58,7 +58,7 @@ jQuery(document).ready(function($) {
 	});		
 
 	(function() {
-		var targetOpacity = 0.2;
+		var targetOpacity = 1;
 
 		var a = $(".header-link a").bind("mouseover", function() {
 			
@@ -255,7 +255,7 @@ function flexsliderSetup(){
 	$('.flexslider-shop').flexslider({	
 	      animation: 'fade',
 	      controlsContainer: '.flexslider-controls',
-	      slideshowSpeed: 4000,           
+	      slideshowSpeed: 8000,           
 		  animationSpeed: 1000,
 	      directionNav: false
 	 });	 
