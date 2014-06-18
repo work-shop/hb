@@ -255,7 +255,7 @@ function flexsliderSetup(){
 	$('.flexslider-shop').flexslider({	
 	      animation: 'fade',
 	      controlsContainer: '.flexslider-controls',
-	      slideshowSpeed: 4000,           
+	      slideshowSpeed: 8000,           
 		  animationSpeed: 1000,
 	      directionNav: false
 	 });	 
