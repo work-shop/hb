@@ -11,6 +11,13 @@ $(function(){
 		});				  
 
 
+	$(window).smartresize(function(){
+	  $container.isotope({
+	    // update columnWidth to a percentage of container width
+	    masonry: { columnWidth: $container.width() / 5 }
+	  });
+	});
+
 	  $.Isotope.prototype._masonryResizeChanged = function() {
 		 return true;
 	};

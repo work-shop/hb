@@ -336,7 +336,7 @@ h5,h6{
 
 
 .loading{
-	.transition(opacity,1s);
+	.transition(opacity,.75s);
 	opacity: 0;	
 }
 
@@ -622,6 +622,7 @@ video{
 	.transition(opacity,.75s);
 	z-index: -999;
 	position: absolute;
+	width: 100%;
 	
 	&.on{
 		opacity: 1;
@@ -711,12 +712,12 @@ video{
 				width: 10px;
 				height: 10px;			
 				display: block;
-				border: 2px solid #aaa;
+				border: 1px solid #aaa;
 				.border-radius(10px);
 				background: #ccc;
 				
 				&.flex-active{
-					border: 2px solid @dark;
+					border: 1px solid @dark;
 				}		
 				
 				&:hover{
