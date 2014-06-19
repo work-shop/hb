@@ -33,8 +33,7 @@ function create_post_type() {
 			'public' => true,
 			'has_archive' => true,
 			'rewrite' => array('slug' => 'projects'),
-			'supports' => array( 'title', 'editor','thumbnail'),
-			'taxonomies' => array('post_tag')			
+			'supports' => array( 'title', 'editor','thumbnail')
 		)
 	);	
 	
@@ -56,8 +55,7 @@ function create_post_type() {
 			'public' => true,
 			'has_archive' => true,
 			'rewrite' => array('slug' => 'collaborations'),
-			'supports' => array( 'title', 'editor','thumbnail'),
-			'taxonomies' => array('post_tag')			
+			'supports' => array( 'title', 'editor','thumbnail')
 		)
 	);		
 
@@ -174,7 +172,7 @@ function get_template_parts( $parts = array() ) {
 
 function remove_menus () {
 global $menu;
-	$restricted = array( __('Comments'),__('Appearance'),__('Plugins') ,__('Tools'),__('Settings'),__('Pages'),__('Posts'),__('Media')    );
+	$restricted = array( __('Comments'),__('Appearance'), __('Plugins') , __('Tools'),__('Settings'),__('Pages'),__('Posts') ,__('Media') );
 	end ($menu);
 	while (prev($menu)){
 		$value = explode(' ',$menu[key($menu)][0]);
