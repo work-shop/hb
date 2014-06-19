@@ -35,6 +35,11 @@
 	<?php get_template_part( 'includes/grid' ); ?>
 	</div>
 
+	<?php // include the list ?>
+	<div class="list off toggle-target">
+	<?php get_template_part( 'includes/list' ); ?>
+	</div>
+
 
 	<?php // include the gallery ?>
 	<div class="gallery on toggle-target" >

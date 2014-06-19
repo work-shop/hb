@@ -60,30 +60,28 @@ jQuery(document).ready(function($) {
 	(function() {
 		var targetOpacity = 1;
 
-		var a = $(".header-link a").bind("mouseover", function() {
-			
-			var idx = $( this ).data("index");
-			
-			$(".grid-element").each( function( index, that ) {
-				that = $(that);
-				if ( index == idx ) {
-					$( that ).css("opacity", targetOpacity);
+		$(".header-link a").each(function( i, link) {
+			$(".grid-element").each( function( j, element ) {
+				if ( i == j ) {
+					element 	= $( element );
+					link 		= $( link ); 
+
+					link.bind("mouseover", function() {
+						element.css("opacity", targetOpacity);
+					}).bind( "mouseout", function() {
+						element.attr("style", null);
+					});
+
+					element.bind( "mouseover", function() {
+						link.addClass("bold");
+					}).bind( "mouseout", function() {
+						link.removeClass("bold");
+					});
+
+
 				}
 			});
-
-		}).bind( "mouseout", function() {
-
-			var idx = $( this ).data("index");
-			
-			$(".grid-element").each( function( index, that ) {
-				that = $(that);
-				if ( index == idx ) {
-					$( that ).attr("style", null);
-				}
-			});
-
 		});
-
 	})();
 
 	
