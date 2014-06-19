@@ -37,7 +37,7 @@
 		
 			        <li>
 			        	<img src="<?php echo $image['sizes']['project-slideshow']; ?>" alt="<?php echo $image['alt']; ?>" />
-			        	<h4 class="flex-caption"></h4>
+			        	<h4 class="flex-caption"><?php echo $image['caption']; ?></h4>
 			        </li>
 		
 			    <?php endforeach; ?>
