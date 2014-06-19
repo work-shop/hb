@@ -42,16 +42,10 @@
 							echo '<img src="'.get_bloginfo('template_directory').'/_/img/blank.jpg" />';
 						}
 			
-						if ( isset($person['name']) ) {
-							if ( isset($person['link']) ) {
-								echo '<div class="person-name"><a href="'.$person['link'].'"><h3>'.$person['name'].'</h3></a></div>';
-							} else {
-								echo '<div class="person-name"><h3>' . $person['name'] . '</h3></div>';
-							}
-						} 
-			
-						if ( isset($person['title']) ) : echo '<div class="person-title"><h4>' . $person['title'] . '</h4></div>'; endif;
-						if ( isset($person['bio']) ) : echo '<div class="person-bio">' . $person['bio'] . '</div>'; endif;
+						if ( isset($person['name']) && !empty( $person['name'])  ) { echo '<div class="person-name"><h3>' . $person['name'] . '</h3></div>'; }
+						if ( isset($person['title']) && !empty( $person['title']) ) : echo '<div class="person-title"><h4>' . $person['title'] . '</h4></div>'; endif;
+						if ( isset($person['bio']) && !empty( $person['bio'])  ) : echo '<div class="person-bio">' . $person['bio'] . '</div>'; endif;
+						if ( isset($person['link']) && !empty( $person['link']) ) : echo '<div class="person-link"><a href="'.$person['link'].'">'.$person['link'].'</a></div>'; endif;
 			
 					echo "</div>";
 
@@ -83,17 +77,18 @@
 	<?php endif; ?>
 
 
-	<?php if ( get_field("clients_statement", "option") ) : ?>
+	<?php if ( ($f = get_field("clients_statement", "option")) && !empty($f)) : ?>
 	<section id="clients" class="block">
 		<div class="block-background" style="background-image:url('<?php echo get_field('client_background_image', 'option')['sizes']['large']; ?>');"></div>	
 	
 		<div class="row">	
 			<div class="col-md-10 col-md-offset-1 text">
-				<h3><?php the_field( "clients_statement", "option" ); ?></h3>
+				<h3><?php echo $f; ?></h3>
 			</div>
 		</div>
 	</section>
 	<?php endif; ?>
+	</section>
 	
 	<section id="contact" class="block">
 		<p>Contact Form Here</p>
