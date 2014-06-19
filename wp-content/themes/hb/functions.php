@@ -2,7 +2,6 @@
 
 get_template_parts( array( 'includes/theme-options', 'state' ) );
 
-
 add_action( 'init', 'create_post_type' );
 function create_post_type() {
 

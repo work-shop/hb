@@ -6,33 +6,13 @@
 
 */
 ?>
+<div class="info-container">
 <div class="row">
-	<h3 class="description col-sm-10"><?php echo get_field('description'); ?></h3>
-	<ul class="collaborators col-sm-10">
+	<h2 class="description col-sm-10"><?php echo get_field('description'); ?></h2>
 
-		<?php 
-			$collaborators = get_field('collaborators');
+	<?php get_template_part( 'collaborations/collaboration', 'collaborators' ); ?>
 
-			if ( !empty( $collaborators ) ) : 
+	<div id="close"><a href="#close"><span class="icon" data-icon="&#8217;"></span></a></div>
 
-				$coll_accumulator = "";
-
-				foreach ( $collaborators as $collaborator ) {
-					if ( !empty( $collaborator['name']) ) {
-						if ( !empty( $collaborator['link'] ) ) {
-							$coll_accumulator .= '<a href="'.$collaborator['link'].'">'
-							   				  . '<h4>'.$collaborator['name'].'</h4></a>';
-						} else {
-							$coll_accumulator . '<h4>'.$collaborator['name'].'</h4>';
-						}
-					}
-				}
-
-				if ( !empty( $coll_accumulator ) ) echo '<li>Collaborators:</li>' . $coll_accumulator;
-
-			endif; 
-
-		?>
-
-	</ul>
+</div>
 </div>
