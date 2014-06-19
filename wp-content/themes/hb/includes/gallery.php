@@ -34,18 +34,18 @@
 			<ul class="slides">
 
 			    <?php foreach( $images as $i => $image ): ?>
-					
-
-
 			        
 			        <?php if ( $GLOBALS['state']->state() == SiteState::Collaborations && $i == 0 ) : ?>
-			        	<li>
-
-			        		<h2><?php echo get_field( 'excerpt' ); ?></h2>
-			        		<h3><?php echo get_field( 'location' ) . ", " . get_field( 'date' ); ?></h3>	
-
-			        		<?php get_template_part('collaborations/collaboration', 'collaborators'); ?>
-
+			        	<li class="info-slide">
+			        		<div class="slide-overlay">
+	
+				        		<h2><?php echo get_field( 'excerpt' ); ?></h2>
+				        		<h3><?php echo get_field( 'location' ) . ", " . get_field( 'date' ); ?></h3>	
+	
+				        		<?php get_template_part('collaborations/collaboration', 'collaborators'); ?>
+				        		
+			        		</div>	
+	
 				        	<img src="<?php echo $image['sizes']['project-slideshow']; ?>" alt="<?php echo $image['alt']; ?>" />
 			        	</li>
 			        <?php endif; ?>

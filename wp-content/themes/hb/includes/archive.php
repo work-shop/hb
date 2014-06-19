@@ -38,9 +38,11 @@ if ( isset($query) && isset($post_type) ) :
 		}
 		
 		$list_accumulator .= '<div class="col-sm-7 col-md-7 col-lg-5 text">'
-						  .  '<h3>'.get_the_title().'</h3>'
-						  .  '<h4 class="date location">'.get_field('location').', '.get_field('date').' </h4>'						  
-						  .  '<p>'.get_field( "excerpt", get_the_ID() ).'</p>'
+						  .  '<h3>'.get_the_title().'</h3>';
+		if(get_field('location') || get_field('date')): 
+		$list_accumulator .= '<h4 class="date location">'.get_field('location').'&nbsp;  &nbsp;'.get_field('date').' </h4>';
+		endif;
+		$list_accumulator .= '<p>'.get_field( "excerpt", get_the_ID() ).'</p>'
 						  .  '</div>';
 
 		$grid_accumulator .= '</div></a></div>';

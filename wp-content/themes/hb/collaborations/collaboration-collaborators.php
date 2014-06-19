@@ -1,4 +1,4 @@
-	<ul class="collaborators col-sm-10">
+	<ul class="collaborators">
 
 		<?php 
 			$collaborators = get_field('collaborators');
@@ -11,9 +11,9 @@
 					if ( !empty( $collaborator['name']) ) {
 						if ( !empty( $collaborator['link'] ) ) {
 							$coll_accumulator .= '<a href="'.$collaborator['link'].'">'
-							   				  . '<h4>'.$collaborator['name'].'</h4></a>';
+							   				  . ''.$collaborator['name'].'</a>';
 						} else {
-							$coll_accumulator .= '<h4>'.$collaborator['name'].'</h4>';
+							$coll_accumulator .= ''.$collaborator['name'].'';
 						}
 					}
 				}
