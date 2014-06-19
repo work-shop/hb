@@ -24,7 +24,7 @@ if ( isset($query) && isset($post_type) ) :
 
 		$query->the_post();
 
-		$grid_accumulator .= '<div class="grid-element col-sm-3" data-index="'.$i.'">'
+		$grid_accumulator .= '<div class="grid-element col-sm-5 col-md-4 col-lg-3" data-index="'.$i.'">'
 						  .  '<a href="'.get_permalink().'">'
 						  .  '<div class="image-container">';						  
 
@@ -37,8 +37,9 @@ if ( isset($query) && isset($post_type) ) :
 			$list_accumulator .= '<div class="col-sm-3 image">'.get_the_post_thumbnail( ).'</div></div>';
 		}
 		
-		$list_accumulator .= '<div class="col-sm-5 text">'
+		$list_accumulator .= '<div class="col-sm-7 col-md-7 col-lg-5 text">'
 						  .  '<h3>'.get_the_title().'</h3>'
+						  .  '<h4 class="date location">'.get_field('location').', '.get_field('date').' </h4>'						  
 						  .  '<p>'.get_field( "excerpt", get_the_ID() ).'</p>'
 						  .  '</div>';
 

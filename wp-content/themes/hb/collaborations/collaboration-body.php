@@ -10,11 +10,10 @@
 
 <div class="body" id="collaboration-body">
 	<?php if ( $video = get_field('video') ) : ?>
-	<div id="video-view-stage">
+	<div class="video toggle-target off">
 	<video autoplay loop>
   		<source src="<?php echo $video; ?>" />
-		Your browser does not support the video tag.	
-	</video>
+		Your browser does not support this type of video. You probably want to consider upgrading to a newer browser. Recent versions ofGoogle Chrome, Safari, and Firefox are all good options.</video>
 	</div>
 	<?php endif; ?>
 
@@ -26,19 +25,19 @@
 		);
 
 	?>
-	<div id="info-view-stage">
+	<div class="info toggle-target off">
 	<?php get_template_part( 'collaborations/collaboration', 'info' ); ?>
 	</div>
 
 
 	<?php // include the grid ?>
-	<div id="grid-view-stage" >
+	<div class="grid off toggle-target">
 	<?php get_template_part( 'includes/grid' ); ?>
 	</div>
 
 
 	<?php // include the gallery ?>
-	<div id="gallery-view-stage" >
+	<div class="gallery on toggle-target" >
 	<?php get_template_part( 'includes/gallery' ); ?>
 	</div>
 

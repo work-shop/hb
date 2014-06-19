@@ -7,7 +7,7 @@
 */
 ?>
 <div class="row">
-	<p class="description col-sm-10"><?php echo get_field('description'); ?></p>
+	<h3 class="description col-sm-10"><?php echo get_field('description'); ?></h3>
 	<ul class="collaborators col-sm-10">
 
 		<?php 
@@ -31,7 +31,6 @@
 				if ( !empty( $coll_accumulator ) ) echo '<li>Collaborators:</li>' . $coll_accumulator;
 
 			endif; 
-
 
 		?>
 
