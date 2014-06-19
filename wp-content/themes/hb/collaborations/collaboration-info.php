@@ -23,7 +23,7 @@
 							$coll_accumulator .= '<a href="'.$collaborator['link'].'">'
 							   				  . '<h4>'.$collaborator['name'].'</h4></a>';
 						} else {
-							$coll_accumulator . '<h4>'.$collaborator['name'].'</h4>';
+							$coll_accumulator .= '<h4>'.$collaborator['name'].'</h4>';
 						}
 					}
 				}
