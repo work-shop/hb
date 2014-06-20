@@ -51,4 +51,5 @@ var feed = new Instafeed({
 
 more.on( 'click', function() { feed.next(); });
 
-feed.run();
+$(window).load( function() { feed.run(); });
+

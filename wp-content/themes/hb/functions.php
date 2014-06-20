@@ -2,16 +2,6 @@
 
 get_template_parts( array( 'includes/theme-options', 'state' ) );
 
-function register_my_menus(){
-	register_nav_menus(
-	array(
-	'primary' => _( 'Main Menu' ),
-	)
-	);
-}
-add_action( 'init', 'register_my_menus');
-
-
 add_action( 'init', 'create_post_type' );
 function create_post_type() {
 
@@ -132,6 +122,7 @@ if ( function_exists( 'add_image_size' ) ) {
 
 }
 
+/*
 
 function autoset_featured() {
   global $post;
@@ -151,6 +142,7 @@ add_action('draft_to_publish', 'autoset_featured');
 add_action('new_to_publish', 'autoset_featured');
 add_action('pending_to_publish', 'autoset_featured');
 add_action('future_to_publish', 'autoset_featured');
+*/
 
 
 function login_css() {
@@ -172,7 +164,7 @@ function get_template_parts( $parts = array() ) {
 
 function remove_menus () {
 global $menu;
-	$restricted = array( __('Comments'),__('Appearance'), __('Plugins') , __('Tools'),__('Settings'),__('Pages'),__('Posts') ,__('Media') );
+	$restricted = array( __('Comments'),__('Appearance')/* , __('Plugins') */ , __('Tools')/* ,__('Settings') */,__('Pages'),__('Posts') ,__('Media') );
 	end ($menu);
 	while (prev($menu)){
 		$value = explode(' ',$menu[key($menu)][0]);

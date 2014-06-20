@@ -48,9 +48,7 @@
 
 <body <?php body_class('before header-closed'); ?>>
 
-	<?php if (is_home()) { } else{ ?> <div id="topbar"></div> <?php } ?>
-	
-	<div id="background" class="visible-xs"></div>
+	<?php if (is_home()) { ?><div id="background" class="visible-xs"></div> <?php } else{ ?> <div id="topbar"></div> <?php } ?>
 	
 	<div id="viewport" class="loading">
 	

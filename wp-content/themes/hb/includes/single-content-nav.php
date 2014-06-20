@@ -13,6 +13,7 @@
 				?>
 					<div class="tools centered">
 						<h4><?php the_title(); ?></h4>
+						<?php get_template_part('includes/location', 'date'); ?>
 						<ul>
 							<li><a href="#" data-target=".gallery" class="on toggle gallery-toggle"><span class="icon " data-icon="&#8225;"></span></a></li>
 							<?php if ( $video = get_field('video') ) : ?>

@@ -262,7 +262,7 @@ function flexsliderSetup(){
 	      animation: 'slide',
 	      controlsContainer: '.flexslider-controls',
 	      slideshowSpeed: 5000,           
-		  animationSpeed: 700,
+		  animationSpeed: 250,
 	      directionNav: true
 	 });	
 	 	 	
