@@ -36,7 +36,7 @@
 			    <?php foreach( $images as $i => $image ): ?>
 			        
 			        <?php if ( $GLOBALS['state']->state() == SiteState::Collaborations && $i == 0 ) : ?>
-<<<<<<< HEAD
+
 			        	<li class="info-slide">
 			        		<div class="slide-overlay">
 
