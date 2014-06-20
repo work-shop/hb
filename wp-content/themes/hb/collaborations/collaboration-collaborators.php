@@ -1,4 +1,4 @@
-	<ul class="collaborators col-sm-10">
+	<ul class="collaborators">
 
 		<?php 
 			$collaborators = get_field('collaborators');
