@@ -6,15 +6,19 @@
 			if ( !empty( $collaborators ) ) : 
 
 				$coll_accumulator = "";
+				$target = count( $collaborators );
 
-				foreach ( $collaborators as $collaborator ) {
+				foreach ( $collaborators as $i => $collaborator ) {
 					if ( !empty( $collaborator['name']) ) {
 						if ( !empty( $collaborator['link'] ) ) {
-							$coll_accumulator .= '<a href="'.$collaborator['link'].'">'
-							   				  . '<h4>'.$collaborator['name'].'</h4></a>';
+							$coll_accumulator .= '<li><a href="'.$collaborator['link'].'">'
+							   				  . $collaborator['name'].'</a>';
 						} else {
-							$coll_accumulator .= '<h4>'.$collaborator['name'].'</h4>';
+							$coll_accumulator .= '<li>'.$collaborator['name'];
 						}
+
+						if ( $i < $target - 1 ) { $coll_accumulator .= ',</li>'; }
+						else { $coll_accumulator .= '</li>'; }
 					}
 				}
 

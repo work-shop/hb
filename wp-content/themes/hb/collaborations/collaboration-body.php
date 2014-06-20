@@ -13,7 +13,7 @@
 	<div class="video toggle-target off">
 	<video autoplay loop>
   		<source src="<?php echo $video; ?>" />
-		Your browser does not support this type of video. You probably want to consider upgrading to a newer browser. Recent versions ofGoogle Chrome, Safari, and Firefox are all good options.</video>
+		Your browser does not support this type of video. You probably want to consider upgrading to a newer browser. Recent versions of Google Chrome, Safari, and Firefox are all good options.</video>
 	</div>
 	<?php endif; ?>
 
