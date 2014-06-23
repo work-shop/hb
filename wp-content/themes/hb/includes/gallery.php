@@ -39,7 +39,7 @@
 			        	<li class="info-slide">
 			        		<div class="slide-overlay">
 
-			        		<?php if ( get_field('excerpt') ) : ?><h2><?php echo get_field( 'excerpt' ); ?></h2> <?php endif; ?>
+			        		<?php if ( get_field('excerpt') ) : ?><h3><?php echo get_field( 'excerpt' ); ?></h3> <?php endif; ?>
 
 			        		<?php get_template_part( 'includes/location', 'date' ); ?>	
 

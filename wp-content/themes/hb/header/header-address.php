@@ -11,6 +11,6 @@
 <address>
 	<p>220 Allens Ave</p>
 	<p>Providence, RI 02903</p>
-	<p><a href="mailto://info@hbarchive.com">info@hbarchive.com</a></p>
+	<p><a href="mailto:info@hbarchive.com">info@hbarchive.com</a></p>
 	<p>401.965.8857</p>
 </address>

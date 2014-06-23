@@ -91,7 +91,7 @@
 	</section>
 	
 	<section id="contact" class="block">
-		<p>Contact Form Here</p>
+		
 	</section>
 	
 </div>

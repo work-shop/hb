@@ -471,6 +471,11 @@ video{
 	.border-radius(2px);
 }
 
+#backtotop{
+	display: block;
+	width: 100%;
+}
+
 
 /********** @HEADER *********/
 
@@ -666,13 +671,14 @@ video{
 			height: 100%;
 			background: rgba(250,250,250,.85);
 			z-index: 999;
-			h2{
-				width: 90%;
+			
+			h3{
+				width: 80%;
 				margin: 10% auto 0 auto;
 			}
 			
-			h3,ul{
-				width: 90%;
+			h4,ul{
+				width: 80%;
 				margin: 15px auto 0 auto;
 			}
 			
@@ -720,7 +726,7 @@ video{
 			&.flex-next{
 			
 				float: right;
-				margin-right: 10px;
+				margin-right: 5px;
 				
 				&:after{
 			    	content: '‹';
@@ -770,7 +776,7 @@ video{
 	}
 	
 	.flex-direction-nav{
-		top: 39%;
+		top: 33%;
 	}
 		
 }
@@ -804,6 +810,11 @@ video{
 		top: 30px;
 		right: 30px;
 		z-index: 1001;
+	}
+	
+	ul li{
+		display: inline-block;
+		margin-right: 10px;
 	}
 }
 
@@ -1027,7 +1038,7 @@ h5,h6{
 	}
 	
 	h3{
-		font-size: 17px;
+		font-size: 16px;
 	}
 	
 	h4{
@@ -1048,20 +1059,31 @@ h5,h6{
 //767px
 @media (max-width: 767px) {
 
+	h1,h2,h3,h4,h5,h6,p{
+		line-height: 1.5;
+	}
+	
+	.text{
+		p{
+			line-height: 1.5;
+			font-size: 13px;
+		}
+	}
+
 	h1{
 		font-size: 30px;
 	}
 	
 	h2{
-		font-size: 21px;
+		font-size: 20px;
 	}
 	
 	h3{
-		font-size: 17px;
+		font-size: 14px;
 	}
 	
 	h4{
-		font-size: 15px;
+		font-size: 14px;
 	}
 	
 	h5,h6{
@@ -1073,27 +1095,176 @@ h5,h6{
 	}
 	
 	#header{ 
-		min-height: 120px;
 		float: none;
-		height: 120px !important;
+		background: @light-transparent;
+		height: 50px !important; 
 		width: 100%;
+		left: 0;
+		
+		&.open{
+			height: 100% !important;
+			overflow: scroll;
+			
+			#nav-toggle{
+				.icon:before{
+					content: '’';
+				}
+			}
+			
+			#nav{
+				display: block;
+				width: 100%;
+				float: none;
+				clear: both;
+				padding-top: 15px;
+				height: inherit;
+				padding-bottom: 30px;
+				
+				li{
+					//text-align: center;
+					padding: 2px 0 1px 0;
+					
+					a{
+						font-size: 13px;
+					}
+				}
+
+			}
+				
+			address{
+				position: static;
+					p{
+						margin-bottom: 3px;
+					}
+				}			
+			
+		}
+		
+		.wrapper{
+			width: 90%;
+			margin: 0 auto;
+			padding-bottom: 100px;
+			
+		}
+		
+		#nav{
+			display: none;
+		}
+	
+		
+		#logo-small{
+			width: 35px;
+			margin-top: 9px;
+		}
+	}
+	
+	.home{
+	
+		#header{
+			background: none;
+		}
+		
+		#content{
+			width: 100%;
+			border: none;
+		}
+	}
+	
+	.sub-menu.hidden{
+		display: block !important;
+		visibility: visible !important;
+	}
+	
+	#headerfix{
+		width: 100%;
+		height: 60px;
 	}
 	
 	#content{
 		float: none;
+		left: 0;
 		width: 100%;
+		//background: yellow;
+		margin-top: 0px;
 	}
 	
-	#logo{
-		display: block;
+	.content-nav{
 		width: 100%;
-		max-width: 260px;
-		position: relative;
-		top: 0;
+		position: static;
+		background: none;
+		height: auto;
 		margin: 0;
-		margin-top: 30px;
-	}	
+		
+		h4{
+			font-size: 13px;
+			margin-bottom: 0;
+		}
+		
+		ul li {
+		
+			margin-right: 7px;
+			&:last-child{
+				margin-right: 0;
+			}
+			
+			a{
+				font-size: 14px;
+			}
+			
+			.icon:before{
+				font-size: 22px;
+			}
+		
+		}
+	}
+	
+	.body{
+		top: 0;
+		margin-top: 10px;
+	}
+	
+	#nav-toggle{
+		margin-top: 8px;
+		
+		.icon:before{
+			color: #777;
+		}
+	}
+	
+	.flexslider .flex-direction-nav{
+		top: 17%;
+	}
 
+	.grid-element{
+		margin-bottom: 10px;
+	}
+	
+	#shop-overlay{
+		top: 0;
+	}
+	
+	.info{
+		width: 100%;
+		
+		h2{
+			line-height: 1.5;
+		}
+		
+		#close{
+			position: fixed;
+		}
+	}
+	
+	.archive-list{
+		h3{
+			margin-top: 10px;
+		}
+		
+		.list-element{
+			margin-bottom: 30px;
+		}
+
+	}
 
 
 }

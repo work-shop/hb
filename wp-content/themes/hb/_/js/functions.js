@@ -183,14 +183,15 @@ function navToggle() {
 		$('#header').addClass('open');
 		$('body').removeClass('header-closed');
 		$('body').addClass('header-open');	
-		headerState = true
-		
+		$('#nav-toggle .icon').data('icon','X');			
+		headerState = true;
 	}
 	else if (headerState) {
 		$('#header').removeClass('open');
 		$('#header').addClass('closed');
 		$('body').removeClass('header-open');
 		$('body').addClass('header-closed');
+		$('#nav-toggle .icon').data('icon','&Egrave;');			
 		headerState = false;
 									
 	}
@@ -222,7 +223,7 @@ function view(){
 	$("#viewport").css('margin-top',viewportTop);
 	$("#viewport").css('margin-left',viewportLeft);
 	
-	$(".block").css('height',viewportHeight-50);
+	$(".block").css('min-height',viewportHeight-50);
 	//$(".block-background").css('min-height',viewportHeight);	
 	$("#viewport").css('margin-left',viewportLeft);	
 
@@ -230,7 +231,14 @@ function view(){
 	
 	if($(window).width() < 768){
 		$("#header").css('height','auto');
-		$("#content").css('width','100%');
+		$("#content").css('width','auto');
+		$("#header").css('height','auto');
+		$("#content").css('width','auto');		
+		$("#content").css('left','auto');							
+		$(".info-container").css('left','auto');	
+		$(".info-container").css('top','auto');	
+		$(".info-container").css('width','auto');									
+		$(".info-container").css('height',ch);								
 	}
 	else{
 		$("#header").css('height',viewportHeight);
@@ -238,8 +246,12 @@ function view(){
 		$("#content").css('left',contentLeft);
 		$("#topbar").css('height',viewportTop);
 		$(".info-container").css('width',contentWidth);									
-		$(".info-container").css('height',viewportHeight-(viewportTop));							$(".info-container").css('left',contentLeft+viewportLeft);	
-		$(".info-container").css('top',viewportTop+50);			
+		$(".info-container").css('height',viewportHeight-(viewportTop));					
+		$(".info-container").css('left',contentLeft+viewportLeft);	
+		$(".info-container").css('top',viewportTop+50);	
+		$("#shop .slides li").css('min-height',viewportHeight);			
+		
+				
 	}
 	
 	if(!loaded){
