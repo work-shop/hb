@@ -53,5 +53,7 @@
 	<div id="viewport" class="loading">
 	
 		<?php get_template_part("header/header","main"); ?>
+		
+		<div id="headerfix"></div>
 	
 		<div id="content" class="clearfix">

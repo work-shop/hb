@@ -31,13 +31,11 @@
 
 		<div class="flexslider flexslider-shop clearfix">
 		
-			<ul class="slides">
+			<ul class="slides clearfix">
 
 			    <?php foreach( $images as $image ): ?>
 		
-			        <li>
-			        	<img src="<?php echo $image['sizes']['project-slideshow']; ?>" alt="<?php echo $image['alt']; ?>" />
-			        	<h4 class="flex-caption"></h4>
+			        <li class="background" style="background-image: url('<?php echo $image['sizes']['project-slideshow']; ?>')">
 			        </li>
 		
 			    <?php endforeach; ?>
