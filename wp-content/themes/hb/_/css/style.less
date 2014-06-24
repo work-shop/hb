@@ -274,7 +274,7 @@ body{
 
 a{
 	&:hover{
-		.bold();
+		
 	}
 }
 
@@ -535,6 +535,10 @@ video{
 
 .home{
 
+	.loading{
+		.transition(opacity,4s);
+	}
+
 	#header{
 			
 		#logo{
@@ -717,6 +721,7 @@ video{
 				float: left;
 				margin-left: 12px;
 				&:after{
+					color: #999;
 			    	content: '›';
 			    	font-size: 50px;
 			    }
@@ -729,6 +734,7 @@ video{
 				margin-right: 5px;
 				
 				&:after{
+					color: #999;
 			    	content: '‹';
 			    	font-size: 50px;			    	
 			    }
@@ -901,17 +907,14 @@ video{
 /********** @CURRENT *********/
 
 #instafeed{
+	margin: 0 auto;
+	width: 1000px;	
 	
 	.element{
-		/*
-width: 25%;
-		float: left;
-*/		
+		width: 250px;
+		height: 250px;
 		padding: 15px;
-		//min-height: 200px;
 	}
-	
-
 }	
 
  &.selected{
@@ -986,15 +989,271 @@ width: 25%;
        -o-transition: none;
           transition: none;
 }
-
 	
 
 
 /********** @UTILITIES *********/
 
 
+.gform_wrapper{
+
+	.gfield{
+		margin-top: 25px;
+	}
+	
+	img{
+		width: auto !important;
+	}
+	
+	//padding-top: 20px;
+	
+	input{
+		width: 100%;
+		//margin: 10px auto;
+		display: block;
+		
+	}
+	
+	.gfield-description{
+	}
+	
+	.ginput_complex .ginput_left {
+		width: 50%;
+		float: left;
+	}
+	
+	.ginput_complex .ginput_right{
+		width: 49%;
+		float: right;
+		
+		 input[type="text"]{
+		 width: 95%;
+		 }
+	}	
+	
+	.ginput_complex label{
+		display: block;
+		margin: 3px 0;
+		font-size: 11px;
+		letter-spacing: 0.5pt;		
+	}
+	
+	.ginput_container ul.gfield_radio li{
+		padding-left: 1px !important;
+	}
+
+	
+	input,textarea{
+		outline: none;
+		border: none;
+		border-bottom: 2px solid #aaa;
+		background: #eee;
+		.border-radius(0px);
+		padding: 6px 12px 6px 6px;
+		font-size: 16px !important;
+		margin-bottom: 10px;
+		.transition(border,.5s);
+		text-indent: 0px;
+		
+		&:focus{		
+			border-bottom: 2px solid @brand;
+		}
+		
+		&[type="email"]{
+			width: 97%;
+			display: block;
+		}
+		
+		&[type="submit"]{
+			width: 60%;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			.border-radius(2px);
+			border: 2px solid @light;
+			padding: 9px;
+			font-size: 18px;
+			color: @brand;
+			font-size: 18px;	
+			background: #ccc;	
+	
+			&:hover{
+				opacity: .75;
+			}			
+			
+		}		
+		
+	}
+	
+	input[type="checkbox"]{
+		width: auto;
+		display: inline-block;
+	}
+	
+	textarea{
+		width: 100%;
+		//margin: 10px auto;
+	}
+	
+	label{
+		font-size: 17px;
+		color: @dark;
+		//display: block;
+	}
+	
+	label{
+		margin-bottom: 0px;
+	}
+	
+	textarea{
+		border: 1px solid #c5c5c5;
+		border-left: 3px solid #bbb;
+		text-indent: 5px;
+		
+		&:focus{
+			border-bottom: 1px solid #bbb;
+			border-left: 3px solid @brand;
+		}
+	}
+	
+	ul.gfield_radio{
+		position: relative;
+		left: 2px;
+		
+		li{
+			margin-top: 15px; 
+		}
+	}	
+	
+}
+
+.gform_wrapper .top_label input.medium, .gform_wrapper .top_label select.medium{
+	width: 100% !important;
+}
+
+.gform_wrapper .top_label .gfield_label{
+	font-weight: normal !important;
+}
+
+.gform_wrapper label{
+	font-weight: normal !important;
+
+}
+
+#gform_fields_2{
+	li.gfield{
+		margin-bottom: 10px;
+	}
+}
+
+.gform_confirmation_message{
+	.bold();
+	text-align: center;
+	padding: 10px;
+	background: #ddd;
+	border: 1px solid @brand;
+	.border-radius(3px);
+	margin-top: 20px;
+	font-size: 18px;
+}
+
+
 
 /********** @RESPONSIVE *********/
+
+@media (min-width: 300px) {
+	
+	#instafeed{
+		margin: 0 auto;
+		width: 250px;	
+		
+		.element{
+			width: 250px;
+			height: 250px;
+			padding: 15px;
+		}
+	}	
+	
+}
+
+
+@media (min-width: 590px) {
+	
+	#instafeed{
+		margin: 0 auto;
+		width: 500px;	
+		
+		.element{
+			width: 250px;
+			height: 250px;
+			padding: 15px;
+		}
+	}	
+	
+}
+
+@media (min-width: 768px) {
+	
+	#instafeed{
+		margin: 0 auto;
+		width: 250px;	
+		
+		.element{
+			width: 250px;
+			height: 250px;
+			padding: 15px;
+		}
+	}	
+	
+}
+
+@media (min-width: 840px) {
+	
+	#instafeed{
+		margin: 0 auto;
+		width: 500px;	
+		
+		.element{
+			width: 250px;
+			height: 250px;
+			padding: 15px;
+		}
+	}	
+	
+}
+
+
+@media (min-width: 1090px) {
+	
+	#instafeed{
+		margin: 0 auto;
+		width: 750px;	
+		
+		.element{
+			width: 250px;
+			height: 250px;
+			padding: 15px;
+		}
+	}	
+	
+}
+
+@media (min-width: 1360px) {
+	
+	#instafeed{
+		margin: 0 auto;
+		width: 1000px;	
+		
+		.element{
+			width: 250px;
+			height: 250px;
+			padding: 15px;
+		}
+	}	
+	
+}
+
+
 
 
 //1200px
@@ -1098,6 +1357,7 @@ h5,h6{
 		float: none;
 		background: @light-transparent;
 		height: 50px !important; 
+		overflow: hidden;
 		width: 100%;
 		left: 0;
 		
@@ -1265,6 +1525,109 @@ h5,h6{
 		}
 
 	}
+	
+.flexslider{
+
+.slides{
+	.slide-overlay{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background: rgba(250,250,250,.85);
+		z-index: 9999;
+		
+		h3{
+			width: 80%;
+			margin: 20px auto 0 auto;
+			font-size: 12px;
+			line-height: 1.4;
+		}
+		
+		h4,ul{
+			display: none;
+			width: 95%;
+			margin: 10px auto 0 auto;
+		}
+
+	}
+	
+	}
+
+	.flex-direction-nav{
+		position: absolute;
+		top: 20%;
+		width: 100%;
+		z-index: 887;
+		
+		a{
+			display: block;
+			visibility: hidden;
+			
+			&.flex-prev{
+				float: left;
+				margin-left: 3px;
+				&:after{
+			    	content: '›';
+			    	font-size: 30px;
+			    }
+
+			}
+			
+			&.flex-next{
+			
+				float: right;
+				margin-right: -12px;
+				
+				&:after{
+			    	content: '‹';
+			    	font-size: 30px;			    	
+			    }
+
+			}			
+			
+			&:after{
+				display: block;
+				visibility: visible;
+			    font-family: "modern_pictograms_proregular";
+				font-size: 60px;
+				position: relative;				
+			}
+		}
+	}
+	
+	.flex-control-nav{
+		margin-top: 8px;
+		text-align: center;
+		
+		li{
+			margin-left: 0;
+			margin-right: 8px;
+			display: inline-block;
+			
+			a{
+				text-indent: -9999px;
+				width: 8px;
+				height: 8px;			
+				display: block;
+				border: 1px solid #aaa;
+				.border-radius(10px);
+				background: #ccc;
+				
+				&.flex-active{
+					border: 1px solid @dark;
+				}		
+				
+				&:hover{
+					cursor: pointer;
+				}	
+			}
+
+		}
+	}
+
+		
+}
+	
 
 
 }

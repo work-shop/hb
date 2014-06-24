@@ -6,18 +6,20 @@ $(function(){
 	$container.on("insta-ready", function() {
 		$container.isotope({
 			 layoutMode: 'masonry',
-			 resizable: false, // disable normal resizing
+			 //resizable: false, // disable normal resizing
 			  // set columnWidth to a percentage of container width
-			 masonry: { columnWidth: $container.width() / 4 }
+			 masonry: { columnWidth: 125 }
 		});				  
 
 
+/*
 	$(window).smartresize(function(){
 	  $container.isotope({
 	    // update columnWidth to a percentage of container width
 	    masonry: { columnWidth: $container.width() / 4 }
 	  });
 	});
+*/
 
 	  $.Isotope.prototype._masonryResizeChanged = function() {
 		 return true;

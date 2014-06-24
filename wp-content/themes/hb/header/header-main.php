@@ -97,8 +97,16 @@
 			?>
 			</li>
 	
-			<li><a href="<?php echo get_bloginfo( 'url' ).'/current'; ?>"> <?php echo "CURRENT"; ?> </a></li>
-			<li><a href="<?php echo get_bloginfo( 'url' ).'/info'; ?>"> <?php echo "INFO"; ?> </a></li>
+			<li><a href="<?php echo get_bloginfo( 'url' ).'/current'; ?>"
+			<?php if ( $GLOBALS[ "state" ]->state() == SiteState::Current ):
+			echo 'class="active bold"'; 
+			endif; ?>
+			> <?php echo "CURRENT"; ?> </a></li>
+			<li><a href="<?php echo get_bloginfo( 'url' ).'/info'; ?>"
+			<?php if ( $GLOBALS[ "state" ]->state() == SiteState::Info ):
+			echo 'class="active bold"'; 
+			endif; ?>			
+			> <?php echo "INFO"; ?> </a></li>
 		</ul>
 		
 	<div class="address-small visible-xs">	

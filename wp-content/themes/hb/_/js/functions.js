@@ -267,7 +267,8 @@ function flexsliderSetup(){
 	      controlsContainer: '.flexslider-controls',
 	      slideshowSpeed: 8000,           
 		  animationSpeed: 1000,
-	      directionNav: false
+	      directionNav: false,
+	      controlNav: false
 	 });	 
 
 	$('.flexslider').flexslider({
