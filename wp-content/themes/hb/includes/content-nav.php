@@ -46,7 +46,7 @@
 							<li><a href="#statement" class="jump-about active">Statement</a></li>
 							<li><a href="#people" class="jump-about">People</a></li>
 							<li><a href="#shop" class="jump-about">Shop</a></li>
-							<?php if ( ($t = get_field('clients_statement','option')) && !empty($t)) : ?><li><a href="#clients" class="jump-about">Clients</a></li><?php endif; ?>
+							<?php if (get_field('clients_statement','option')): ?><li><a href="#clients" class="jump-about">Clients</a></li><?php endif; ?>
 							<li><a href="#contact" class="jump-about">Contact</a></li>
 						</ul>
 					</div>	
