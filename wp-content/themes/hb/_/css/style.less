@@ -551,6 +551,10 @@ video{
 				color: white;
 			}
 		}
+		
+		#logo-small{
+			display: none !important;
+		}
 			
 	}
 
@@ -1476,12 +1480,21 @@ h5,h6{
 	
 		#header{
 			background: none;
+			
+			&.open{
+				background: @light-transparent;
+			}
+			
+			*{
+				color: @dark !important;
+			}
 		}
 		
 		#content{
 			width: 100%;
 			border: none;
 		}
+		
 	}
 	
 	.sub-menu.hidden{

@@ -8,7 +8,7 @@
 */
 ?>
 
-<div id="nav-footer-box" class="">
+<div id="nav-footer-box" class="hidden-sm hidden-xs">
 
 <?php if ( $GLOBALS['state']->state() === SiteState::Landing ) { ?>
 	
