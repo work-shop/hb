@@ -60,9 +60,10 @@ jQuery(document).ready(function($) {
 	(function() {
 		var targetOpacity = 1;
 
-		$(".header-link a").each(function( i, link) {
+		$(".active-menu .header-link a").each(function( i, link) {
 			$(".grid-element").each( function( j, element ) {
 				if ( i == j ) {
+
 					element 	= $( element );
 					link 		= $( link ); 
 

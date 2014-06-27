@@ -27,8 +27,8 @@
 	
 			<?php
 				echo '<ul class="sub-menu '; 
-				if ( $GLOBALS[ "state" ]->state() != SiteState::Projects ): echo 'hidden';
-				endif;
+				if ( $GLOBALS[ "state" ]->state() != SiteState::Projects ) { echo 'hidden'; }
+				else { echo "active-menu"; }
 				echo '">';			
 					if ( is_single() ) $title = get_the_title();
 	
@@ -64,8 +64,8 @@
 			<li><a href="<?php echo get_bloginfo( 'url' ).'/collaborations'; ?>" class="<?php if ( $GLOBALS[ "state" ]->state() === SiteState::Collaborations && !is_single() ): echo 'active bold'; endif;  ?>"> <?php echo "COLLABORATIONS"; ?> </a>
 			<?php 
 				echo '<ul class="sub-menu '; 
-				if ( $GLOBALS[ "state" ]->state() != SiteState::Collaborations ): echo 'hidden';
-				endif;
+				if ( $GLOBALS[ "state" ]->state() != SiteState::Collaborations ) { echo 'hidden'; }
+				else { echo "active-menu"; }
 				echo '">';
 				
 					if ( is_single() ) $title = get_the_title();
