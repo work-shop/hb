@@ -24,7 +24,7 @@ if ( isset($query) && isset($post_type) ) :
 
 		$query->the_post();
 
-		$grid_accumulator .= '<div class="grid-element col-xs-6 col-sm-5 col-md-4 col-lg-3" data-index="'.$i.'">'
+		$grid_accumulator .= '<div class="archive-grid-element grid-element col-xs-6 col-sm-5 col-md-4 col-lg-3" data-index="'.$i.'">'
 						  .  '<a href="'.get_permalink().'">'
 						  .  '<div class="image-container">';						  
 
