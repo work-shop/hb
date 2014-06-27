@@ -9,7 +9,7 @@
 */
 ?>
 
-<div id="landing" class="hidden-xs">
+<div id="landing" class="hidden-xs hidden-sm">
 	<?php if ( get_field('video','option') ) { ?>
 		<video autoplay loop <?php if(get_field('video_poster','option')): ?>poster="<?php the_field('video_poster','option'); endif; ?>">
 	  		<source src="<?php the_field('video','option'); ?>" type="video/mp4">

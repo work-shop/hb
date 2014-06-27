@@ -11,7 +11,9 @@
 	
 	<?php if ( get_field("statement", "option") ) : ?>
 	<section id="statement" class="block">
-		<div class="block-background" style="background-image:url('<?php echo get_field('statement_background_image', 'option')['sizes']['large']; ?>');"></div>
+		<div class="block-background" style="background-image:url('<?php 
+		
+		$statement_background_image = get_field('statement_background_image', 'option');			echo $statement_background_image['sizes']['slideshow']; ?>');"></div>
 			
 		<div class="row">	
 			<div class="col-md-10 col-md-offset-1">
@@ -32,7 +34,7 @@
 			<?php
 				foreach (get_field('people', 'option') as $person ) {
 			
-					echo '<div class="person col-sm-3">';
+					echo '<div class="person col-sm-6 col-md-4">';
 			
 						if ($person['headshot']) {
 							echo '<div class="person-headshot">';
@@ -79,7 +81,9 @@
 
 	<?php if ( ($f = get_field("clients_statement", "option")) && !empty($f)) : ?>
 	<section id="clients" class="block">
-		<div class="block-background" style="background-image:url('<?php echo get_field('client_background_image', 'option')['sizes']['large']; ?>');"></div>	
+		<div class="block-background" style="background-image:url('<?php 
+		$client_background_image = get_field('client_background_image', 'option');
+		echo $client_background_image['sizes']['slideshow']; ?>');"></div>	
 	
 		<div class="row">	
 			<div class="col-md-10 col-md-offset-1 text">

@@ -11,7 +11,7 @@
 	<a href="<?php bloginfo('url'); ?>">
 	<?php if ( $GLOBALS[ "state" ]->state() === SiteState::Landing ) { ?>
 	
-		<img src="<?php echo get_template_directory_uri() . "/_/img/logo-large-white.png"; ?>" alt="HB Logo" />
+		<img src="<?php echo get_template_directory_uri() . "/_/img/logo-large.png"; ?>" alt="HB Logo" />
 	
 	
 	<?php } else { ?>
