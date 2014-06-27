@@ -21,6 +21,15 @@
 		<div id="nav-toggle" class="visible-xs right">
 			<span class="icon" data-icon="&Egrave;"></span>
 		</div>
+
+		<!-- <div class="visible-xs">
+			<ul id="small-nav">
+				<li><a href="<?php echo get_bloginfo( 'url' ).'/projects'; ?>"> <?php echo "projects"; ?> </a>
+				<li><a href="<?php echo get_bloginfo( 'url' ).'/collaborations'; ?>"> <?php echo "collaborations"; ?> </a>
+				<li><a href="<?php echo get_bloginfo( 'url' ).'/current'; ?>"> <?php echo "current"; ?> </a>
+				<li><a href="<?php echo get_bloginfo( 'url' ).'/info'; ?>"> <?php echo "info"; ?> </a>
+			</ul>
+		</div> -->
 	
 		<ul id="nav">
 			<li><a href="<?php echo get_bloginfo( 'url' ).'/projects'; ?>" class="<?php if ( $GLOBALS[ "state" ]->state() === SiteState::Projects && !is_single() ): echo 'active bold'; endif;  ?>"> <?php echo "PROJECTS"; ?> </a>
@@ -108,7 +117,7 @@
 			endif; ?>			
 			> <?php echo "INFO"; ?> </a></li>
 		</ul>
-		
+
 	<div class="address-small visible-xs">	
 		<?php get_template_part( "header/header", "address" ); ?>
 	</div>

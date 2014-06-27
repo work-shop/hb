@@ -54,6 +54,7 @@ jQuery(document).ready(function($) {
 		//$(this).addClass('large');
 		$( ".content-nav .gallery-toggle" ).trigger( "click" );
 		$('.flexslider').flexslider( parseInt( $(this).data("index") ) );
+		$("html, body").animate({scrollTop: 0}, 'slow');
 
 	});		
 
@@ -61,7 +62,7 @@ jQuery(document).ready(function($) {
 		var targetOpacity = 1;
 
 		$(".active-menu .header-link a").each(function( i, link) {
-			$(".grid-element").each( function( j, element ) {
+			$(".archive-grid-element").each( function( j, element ) {
 				if ( i == j ) {
 
 					element 	= $( element );
