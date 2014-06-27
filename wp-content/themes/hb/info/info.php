@@ -91,7 +91,14 @@
 	</section>
 	
 	<section id="contact" class="block">
-		<p>Contact Form Here</p>
+	
+		<div id="contact-form" class="row">
+			<h3 class="centered">Send us a message.</h3>
+			<div class="col-sm-6 col-sm-offset-3">
+		<?php gravity_form( 1, $display_title=false, $display_description=false, $display_inactive=false, $field_values=null, $ajax=true, $tabindex=1000); ?>
+			</div>
+		</div>
+		
 	</section>
 	
 </div>

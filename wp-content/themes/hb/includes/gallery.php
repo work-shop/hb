@@ -40,7 +40,7 @@
 			        	<li class="info-slide">
 			        		<div class="slide-overlay">
 
-			        		<?php if ( get_field('excerpt') ) : ?><h2><?php echo get_field( 'excerpt' ); ?></h2> <?php endif; ?>
+			        		<?php if ( get_field('excerpt') ) : ?><h3><?php echo get_field( 'excerpt' ); ?></h3> <?php endif; ?>
 
 			        		<?php get_template_part( 'includes/location', 'date' ); ?>	
 
@@ -54,7 +54,9 @@
 
 			        <li>
 			        	<img src="<?php echo $image['sizes']['project-slideshow']; ?>" alt="<?php echo $image['alt']; ?>" />
-			        	<h4 class="flex-caption"><?php echo $image['caption']; ?></h4>
+			        	<?php if($image['caption']): ?>
+			        		<h4 class="flex-caption"><?php echo $image['caption']; ?></h4>
+			        	<?php endif; ?>
 			        </li>
 		
 			    <?php endforeach; ?>
