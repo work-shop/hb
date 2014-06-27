@@ -556,6 +556,10 @@ video{
 		}
 	}
 	
+	body{
+		background: #555;
+	}
+	
 	#content{
 		overflow: hidden;
 		position: fixed;
@@ -1192,20 +1196,6 @@ video{
 	
 }
 
-@media (min-width: 768px) {
-	
-	#instafeed{
-		margin: 0 auto;
-		width: 250px;	
-		
-		.element{
-			width: 250px;
-			height: 250px;
-			padding: 15px;
-		}
-	}	
-	
-}
 
 @media (min-width: 840px) {
 	
@@ -1250,6 +1240,25 @@ video{
 			padding: 15px;
 		}
 	}	
+	
+}
+
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px)  {
+	
+	.content-nav{
+		width: 100%;
+		left: 0;
+		top: 0;
+	}
+	
+	.home{
+		#viewport{
+			top: 0;
+		}
+	}
+	
 	
 }
 
@@ -1311,6 +1320,27 @@ h5,h6{
 	p{
 		font-size: 15px;
 	}
+	
+	.home{
+	
+		#header{
+			*{
+				//color: @dark !important;
+			}
+		}	
+		
+		#content{
+			width: 100%;
+			border: none;
+			position: fixed;
+			top: 0;
+		}	
+	}
+	
+	#header{
+		width: 200px;
+	}
+
 
 
 }
