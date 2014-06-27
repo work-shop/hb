@@ -13,7 +13,7 @@
 	<section id="statement" class="block">
 		<div class="block-background" style="background-image:url('<?php 
 		
-		$statement_background_image = get_field('statement_background_image', 'option');			echo $statement_background_image['sizes']['slideshow']; ?>');"></div>
+		$statement_background_image = get_field('statement_background_image', 'option');			echo $statement_background_image['sizes']['project-slideshow']; ?>');"></div>
 			
 		<div class="row">	
 			<div class="col-md-10 col-md-offset-1">

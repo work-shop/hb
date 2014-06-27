@@ -21,14 +21,23 @@
 		<div id="nav-toggle" class="visible-xs right">
 			<span class="icon" data-icon="&Egrave;"></span>
 		</div>
+
+		<!-- <div class="visible-xs">
+			<ul id="small-nav">
+				<li><a href="<?php echo get_bloginfo( 'url' ).'/projects'; ?>"> <?php echo "projects"; ?> </a>
+				<li><a href="<?php echo get_bloginfo( 'url' ).'/collaborations'; ?>"> <?php echo "collaborations"; ?> </a>
+				<li><a href="<?php echo get_bloginfo( 'url' ).'/current'; ?>"> <?php echo "current"; ?> </a>
+				<li><a href="<?php echo get_bloginfo( 'url' ).'/info'; ?>"> <?php echo "info"; ?> </a>
+			</ul>
+		</div> -->
 	
 		<ul id="nav">
 			<li><a href="<?php echo get_bloginfo( 'url' ).'/projects'; ?>" class="<?php if ( $GLOBALS[ "state" ]->state() === SiteState::Projects && !is_single() ): echo 'active bold'; endif;  ?>"> <?php echo "PROJECTS"; ?> </a>
 	
 			<?php
 				echo '<ul class="sub-menu '; 
-				if ( $GLOBALS[ "state" ]->state() != SiteState::Projects ): echo 'hidden';
-				endif;
+				if ( $GLOBALS[ "state" ]->state() != SiteState::Projects ) { echo 'hidden'; }
+				else { echo "active-menu"; }
 				echo '">';			
 					if ( is_single() ) $title = get_the_title();
 	
@@ -64,8 +73,8 @@
 			<li><a href="<?php echo get_bloginfo( 'url' ).'/collaborations'; ?>" class="<?php if ( $GLOBALS[ "state" ]->state() === SiteState::Collaborations && !is_single() ): echo 'active bold'; endif;  ?>"> <?php echo "COLLABORATIONS"; ?> </a>
 			<?php 
 				echo '<ul class="sub-menu '; 
-				if ( $GLOBALS[ "state" ]->state() != SiteState::Collaborations ): echo 'hidden';
-				endif;
+				if ( $GLOBALS[ "state" ]->state() != SiteState::Collaborations ) { echo 'hidden'; }
+				else { echo "active-menu"; }
 				echo '">';
 				
 					if ( is_single() ) $title = get_the_title();
@@ -108,7 +117,7 @@
 			endif; ?>			
 			> <?php echo "INFO"; ?> </a></li>
 		</ul>
-		
+
 	<div class="address-small visible-xs">	
 		<?php get_template_part( "header/header", "address" ); ?>
 	</div>
