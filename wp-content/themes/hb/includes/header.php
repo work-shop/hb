@@ -48,7 +48,9 @@
 
 <body <?php body_class('before header-closed'); ?>>
 
-	<?php if (is_home()) { ?><div id="background" class="visible-xs visible-sm"></div> <div id="border" class="hidden-sm hidden-xs"></div><?php } else{ ?> <div id="topbar"></div> <?php } ?>
+	<?php if (is_home()) { ?><div id="background" class="visible-xs visible-sm"  style="background-image:url('<?php 
+		
+		$statement_background_image = get_field('landing_page_image', 'option');			echo $statement_background_image['sizes']['large']; ?>');"></div> <div id="border" class="hidden-sm hidden-xs"></div><?php } else{ ?> <div id="topbar"></div> <?php } ?>
 	
 	<div id="viewport" class="loading">
 	
