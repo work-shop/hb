@@ -18,7 +18,6 @@ jQuery(document).ready(function($) {
 
 	$('#nav-toggle').click(function(event) {
 	  	event.preventDefault();
-	  	console.log('#nav-toggle clicked');
 		navToggle();
 	});
 	
@@ -94,7 +93,6 @@ jQuery(document).ready(function($) {
 		var target = ".gallery";
 
 		$(".info").click(function(e) {
-			console.log(".info callback");
 
 			e.preventDefault();
 			
@@ -110,12 +108,10 @@ jQuery(document).ready(function($) {
 
 
 		$(".content-nav .toggle").click(function(e){
-			console.log(".toggle callback");
 
 			e.preventDefault();
 			
 			if (  $(this).hasClass("info-toggle") ) {
-				console.log("info-toggle");
 				target = $(".on").data("target");
 			} 
 
@@ -208,7 +204,7 @@ function view(){
 	ch = $(window).height();
 	cw = $(window).width();
 		
-	viewportWidth = cw*.93;
+	viewportWidth = cw*.89;
 	viewportHeight = ch*.9;
 	viewportTop = (ch-viewportHeight)/2;
 	viewportLeft = (cw-viewportWidth)/2;

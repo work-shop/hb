@@ -115,7 +115,7 @@ add_theme_support( 'post-thumbnails' );
     set_post_thumbnail_size( 570, 570, false );
 }
 if ( function_exists( 'add_image_size' ) ) {
-	add_image_size('project-slideshow',1440,768, true); 
+	add_image_size('project-slideshow',1440,900, true); 
 	add_image_size( 'project-small', 260, 160, true ); 
 	add_image_size( 'project-large', 540, 420, true ); 
 	add_image_size( 'headshot', 300, 300, true ); 
@@ -164,7 +164,7 @@ function get_template_parts( $parts = array() ) {
 
 function remove_menus () {
 global $menu;
-	$restricted = array( __('Comments'),__('Appearance') , __('Plugins'), __('Tools') ,__('Settings') ,__('Pages'),__('Posts') ,__('Media') );
+	$restricted = array( __('Comments'),__('Appearance') , /* __('Plugins'), __('Tools') ,__('Settings') , */__('Pages'),__('Posts') ,__('Media') );
 	end ($menu);
 	while (prev($menu)){
 		$value = explode(' ',$menu[key($menu)][0]);
