@@ -231,7 +231,7 @@ function view(){
 
 	contentHeight = $("#content").height();
 	
-	if($(window).width() < 768){
+	if($(window).width() < 768 || $(window).height() < 600){
 		$("#header").css('height','auto');
 		$("#content").css('width','auto');
 		$("#header").css('height','auto');
