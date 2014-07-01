@@ -214,15 +214,10 @@ function view(){
 
 	$("#viewport").css('width',viewportWidth);	
 	$("#viewport").css('height',viewportHeight);
-/*
-	$(".home #content").css('height',ch-30);	
-	$(".home #content").css('width',cw-30);		
-*/
 	$("#viewport").css('margin-top',viewportTop);
 	$("#viewport").css('margin-left',viewportLeft);
 	
 	$(".block").css('min-height',viewportHeight-50);
-	//$(".block-background").css('min-height',viewportHeight);	
 	$("#viewport").css('margin-left',viewportLeft);	
 
 	contentHeight = $("#content").height();
